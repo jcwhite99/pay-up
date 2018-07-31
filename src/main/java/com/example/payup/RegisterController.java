@@ -1,4 +1,4 @@
-package com.example.payup.Controllers;
+package com.example.payup;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -65,22 +65,22 @@ class emailvalidation {
         public void usernameValidation(String userName) {
             boolean valid = true;
             ArrayList<String> username = new ArrayList<>();
-            if (username.length() > 15 || username.length < 8) {
+            if (userName.length() > 15 || userName.length() < 8) {
                 System.out.println("Username should be less than 15 characters and more than 8 characters in length");
                 valid = false;
             }
             String upperCaseChars = "(.*[A-Z].*)";
-            if (!username.matches(upperCaseChars)) {
+            if (!userName.matches(upperCaseChars)) {
                 System.out.println("Username should contain at least one upper case letter");
                 valid = false;
             }
             String lowerCaseChars = "(.*[a-z].*)";
-            if (!username.matches(lowerCaseChars)) {
+            if (!userName.matches(lowerCaseChars)) {
                 System.out.println("Username should contain at least one lower case letter");
                 valid = false;
             }
             String numbers = "(.*[0-9].*)";
-            if (!username.matches(numbers)) {
+            if (!userName.matches(numbers)) {
                 System.out.println("Username should contain at least one number.");
                 valid = false;
                 if (valid) {
