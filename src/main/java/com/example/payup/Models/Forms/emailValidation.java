@@ -1,4 +1,4 @@
-package com.example.payup.Form;
+package com.example.payup.Models.Forms;
 
 class emailvalidation {
     public void emailValidation(String email) {
