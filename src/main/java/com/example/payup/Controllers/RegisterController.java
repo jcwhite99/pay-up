@@ -1,50 +1,41 @@
 package com.example.payup.Controllers;
 
+import com.example.payup.Models.Forms.RegisterForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.ArrayList;
-
-
 
 @Controller
-@RequestMapping(value = "register")
-public class  RegisterController {
-    static ArrayList<String> register = new ArrayList<>();
+public class RegisterController {
+
+    @RequestMapping(value="/register", method=RequestMethod.GET)
+    public String getRegisterForm() {
+        return "register";
+    }
+    @RequestMapping(value="/register", method=RequestMethod.POST)
+    public String register(@ModelAttribute(name="registerForm") RegisterForm registerForm, Model model) {
+
+        String username = registerForm.getUsername();
+        String password = registerForm.getPassword();
+        String confirmPassword = registerForm.getConfirmPassword();
+        String email = registerForm.getEmail();
 
 
-    // Request path: /register
-    @RequestMapping(value = "")
-    public String index(Model model) {
-        model.addAttribute("register", register);
-        model.addAttribute("title", "register");
-        return "register/index";
+        if("admin".equals(username) && "admin".equals(password) && "admin".equals(confirmPassword) && "admin".equals(email)){
+            return "login";
+        }
+
+        model.addAttribute("invalidCredentials", true);
+
+        return "register";
+
+
+
     }
 
-    // Request path register/add
-    @RequestMapping(value = "add", method = RequestMethod.GET)
-    public String displayRegisterForm(Model model) {
-        model.addAttribute("title", "register");
-        return "register/add";
-
-    }
-
-    //Request path: register/add
-    @RequestMapping(value = "add", method = RequestMethod.POST)
-    public String processAddRegisterForm(@RequestParam String email, @RequestParam String username, @RequestParam String psw) {
-        register.add(email);
-        register.add(username);
-        register.add(psw);
-
-        //Redirect to register
-        return "redirect:/register";
-
-    }
 }
-
 
 
 

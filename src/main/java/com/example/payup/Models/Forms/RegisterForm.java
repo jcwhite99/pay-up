@@ -30,7 +30,7 @@ public class RegisterForm {
             return confirmPassword;
         }
 
-        public void setconfirmPassword(String confirmPassword) {
+        public void setConfirmPassword(String confirmPassword) {
             this.confirmPassword = confirmPassword;
 
         }
