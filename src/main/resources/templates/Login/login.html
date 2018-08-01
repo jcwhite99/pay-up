@@ -14,34 +14,20 @@
 
 
 
-<h1 th:text="${title}">Log in</h1>
+    <h1 th:text="${title}">Log in</h1>
 
 
 
-<form method="post">
+    <form th: action="@{/login}" th:object="$loginForm}" method="post">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" autofocus="autofocus"/>
 
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password"/>
+        </br>
+        <input type="submit" value="Log In"/>
 
-
-
-    Username:<br>
-
-    <input type="text" name="username"/><br>
-
-    <br>
-
-    Password:<br>
-
-    <input type="text" name="psw"/><br>
-
-    <br>
-
-
-
-</form>
-
-
+    </form>
 
 </body>
-
-
 </html>
