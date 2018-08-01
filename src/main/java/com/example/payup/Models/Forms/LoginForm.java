@@ -16,7 +16,7 @@ public class LoginForm {
         this.username = username;
     }
 
-    public String getPassword(String password) {
+    public String getPassword() {
         return password;
     }
 

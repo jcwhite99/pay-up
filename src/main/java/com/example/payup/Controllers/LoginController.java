@@ -14,11 +14,12 @@ public class LoginController {
     public String getLoginForm() {
         return "login";
     }
-    @RequestMapping(value="login", method=RequestMethod.POST)
+    @RequestMapping(value="/login", method=RequestMethod.POST)
     public String login(@ModelAttribute(name="loginForm") LoginForm loginForm, Model model) {
 
         String username = loginForm.getUsername();
         String password = loginForm.getPassword();
+
 
         if("admin".equals(username) && "admin".equals(password)){
             return "dashboard";
