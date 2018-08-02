@@ -15,7 +15,7 @@ public class RegisterController {
         return "register";
     }
     @RequestMapping(value="/register", method=RequestMethod.POST)
-    public String register(@ModelAttribute(name="registerForm") RegisterForm registerForm, Model model) {
+    public String register(@ModelAttribute(name="RegisterForm") RegisterForm registerForm, Model model) {
 
         String username = registerForm.getUsername();
         String password = registerForm.getPassword();
@@ -29,7 +29,7 @@ public class RegisterController {
 
         model.addAttribute("invalidCredentials", true);
 
-        return "register";
+        return "Home/register";
 
 
 

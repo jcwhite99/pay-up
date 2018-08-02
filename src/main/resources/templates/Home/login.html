@@ -2,13 +2,9 @@
 
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 
-<head>
+<head th:replace="fragments :: head"></head>
 
-    <meta charset="UTF-8"/>
 
-    <title th:text="${title}">Log in </title>
-
-</head>
 
 <body class="container">
 
@@ -20,12 +16,14 @@
     <nav th:replace="fragments :: navigation"></nav>
 
 
-    <form th: action="/login" th:object="LoginForm" method="post">
+    <form th:object="${login}" method="post">
         <label for="username">Username:</label>
+        </br>
         <input type="text" id="username" name="username" autofocus="autofocus"/>
         </br>
         </br>
         <label for="password">Password:</label>
+        </br>
         <input type="password" id="password" name="password"/>
         </br>
         </br>
