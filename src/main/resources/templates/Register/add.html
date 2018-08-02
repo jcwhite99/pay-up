@@ -10,42 +10,33 @@
 
 </head>
 
-<body>
+<body class="container">
 
 
 
-<h1> th:text="${title}">Register</h1>
+<h1 th:text="${title}">Register</h1>
 
 
 
-<form method="post">
+<form th: action="@{/register}" th:object="${RegisterForm}" method="post">
 
-
-    Email:<br></br>
-
-    <input> type="text" name="email"</input><br>
-
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" autofocus="autofocus"/>
     </br>
-
-    Username:<br></br>
-
-    <input> type="text" name="username"</input><br>
-
     </br>
-
-    Password:<br></br>
-
-    <input> type="text" name="psw"</input><br>
-
-    <br></br>
-
-    Confirm Password:<br></br>
-
-    <input> type="text" name="psw"</input><br>
-
-    <br></br>
-
-    <input> type="submit" value="Sign up"</input>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" autofocus="autofocus"/>
+    </br>
+    </br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"/>
+    </br>
+    </br>
+    <lable for="psw">Confirm Password:</lable>
+    <input for="psw" id="psw" name="psw"/>
+    </br>
+    </br>
+    <input type="submit" value="Register"/>
 
 </form>
 

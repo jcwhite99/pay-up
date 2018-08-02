@@ -10,20 +10,24 @@
 
 </head>
 
-<body>
+<body class="container">
+
 
 
 
     <h1 th:text="${title}">Log in</h1>
 
+    <nav th:replace="fragments :: navigation"></nav>
 
 
-    <form th: action="@{/login}" th:object="${loginForm}" method="post">
-        <label for="username">Username</label>
+    <form th: action="/login" th:object="LoginForm" method="post">
+        <label for="username">Username:</label>
         <input type="text" id="username" name="username" autofocus="autofocus"/>
-
-        <label for="password">Password</label>
+        </br>
+        </br>
+        <label for="password">Password:</label>
         <input type="password" id="password" name="password"/>
+        </br>
         </br>
         <input type="submit" value="Log In"/>
 
