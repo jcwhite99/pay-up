@@ -1,13 +1,13 @@
-package com.example.payup.models.Forms;
+package com.example.payup.models.forms;
 
-public class RegisterForm {
+public class register {
 
         private String username;
         private String password;
         private String confirmPassword;
         private String email;
 
-        public RegisterForm(String username, String password, String confirmPassword, String email) {
+        public register(String username, String password, String confirmPassword, String email) {
             this.username = username;
             this.password = password;
             this.confirmPassword = confirmPassword;

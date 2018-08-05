@@ -1,10 +1,10 @@
-package com.example.payup.models.Forms;
+package com.example.payup.models.forms;
 
-public class LoginForm {
+public class login {
     private String username;
     private String password;
 
-    public LoginForm (String username, String password) {
+    public login(String username, String password) {
         this.username = username;
         this.password = password;
     }
