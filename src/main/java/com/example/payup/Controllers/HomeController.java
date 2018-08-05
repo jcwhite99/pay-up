@@ -26,7 +26,7 @@ public class HomeController {
     @RequestMapping(value = "register", method = RequestMethod.GET)
     public String displayRegisterForm(Model model) {
         model.addAttribute("title", "Register");
-        return "home/register";
+        return "users/register";
     }
 
     @RequestMapping(value = "register", method = RequestMethod.POST)
