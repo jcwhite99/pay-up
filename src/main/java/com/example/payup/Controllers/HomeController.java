@@ -8,9 +8,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 
+import org.examples.models.Forms.RegisterForm;
+
 @Controller
 @RequestMapping("pay-up")
 public class HomeController {
+
+    static ArrayList<RegisterForm> RegisterForm = new ArrayList<>();
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(Model model) {
@@ -18,8 +22,6 @@ public class HomeController {
         model.addAttribute("title", "Pay Up!");
         return "home/index";
     }
-
-    static ArrayList<String> register = new ArrayList<>();
 
     @RequestMapping(value = "register", method = RequestMethod.GET)
     public String displayRegisterForm(Model model) {
