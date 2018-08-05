@@ -9,10 +9,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("pay-up")
 public class HomeController {
 
-    @RequestMapping(value="", method=RequestMethod.GET)
-        public String index(Model model) {
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    public String index(Model model) {
 
-            model.addAttribute("title","Pay Up!" );
-            return "home/index";
-        }
+        model.addAttribute("title", "Pay Up!");
+        return "home/index";
     }
+
+    @RequestMapping(value = "register")
+    public String displayAddRegisterForm(Model model) {
+        model.addAttribute("title","Register");        return"home/register";
+    }
+
+}
+
+
+
+

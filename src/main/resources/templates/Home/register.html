@@ -10,7 +10,7 @@
 
 </head>
 
-<body class="container">
+<body>
 
 
 
@@ -18,28 +18,28 @@
 
 
 
-<form th: action="@{/register}" th:object="${RegisterForm}" method="post">
+<form  method="post">
 
     <label for="email">Email:</label>
-    </br>
+    <br>
     <input type="text" id="email" name="email" autofocus="autofocus"/>
-    </br>
-    </br>
+    <br>
+    <br>
     <label for="username">Username:</label>
-    </br>
+    <br>
     <input type="text" id="username" name="username" autofocus="autofocus"/>
-    </br>
-    </br>
+    <br>
+    <br>
     <label for="password">Password:</label>
-    </br>
+    <br>
     <input type="password" id="password" name="password"/>
-    </br>
-    </br>
-    <lable for="psw">Confirm Password:</lable>
-    </br>
-    <input for="psw" id="psw" name="psw"/>
-    </br>
-    </br>
+    <br>
+    <br>
+    <label for="password">Confirm Password:</label>
+    <br>
+    <input type="password" id="psw" name="psw"/>
+    <br>
+    <br>
     <input type="submit" value="Register"/>
 
 </form>
