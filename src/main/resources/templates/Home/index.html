@@ -1,47 +1,18 @@
 <!DOCTYPE html>
-
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-
-<head>
-
-    <meta charset="UTF-8"/>
-
-    <title th:text="${title}">Home</title>
-
-</head>
-
+<head th:replace="fragments :: head"></head>
 <body class="container">
-
-
-
 <h1 th:text="${title}">Pay Up!</h1>
 
-
-
 <h3>Welcome to Pay Up!.  This application is specifically designed to help small business owners quickly
-
     and easily generate an invoice that can be emailed to their clients.  The email also includes a pay now feature, so getting
-
     paid is convenient.  Please log in or register below for access to the site.</h3>
 
-
 <form>
-
-
-
-<a href="/pay-up/user/register"> Register </a><br>
-
-</br>
-
-<a href="/pay-up/user/login"> Log In</a>
-
+    <a href="/pay-up/user/register"> Register </a><br>
+    </br>
+    <a href="/pay-up/user/login"> Log In</a>
 </form>
 
-
-
-
-
-
 </body>
-
 </html>
