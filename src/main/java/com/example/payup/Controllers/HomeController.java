@@ -5,9 +5,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
-
-
 @Controller
 @RequestMapping("pay-up")
 public class HomeController {
@@ -18,7 +15,6 @@ public class HomeController {
         model.addAttribute("title", "Pay Up!");
         return "home/index";
     }
-
 
 }
 
