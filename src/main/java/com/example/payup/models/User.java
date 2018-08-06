@@ -1,4 +1,6 @@
-package com.example.payup.models.forms;
+package com.example.payup.models;
+
+import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -13,19 +15,16 @@ public class User {
     private int id;
 
     @NotNull
-    @Size(min=5, max=15)
+    @Size(min = 5, max = 15)
     private String username;
 
     @Email
     private String email;
 
     @NotNull
-    @Size(min=6)
+    @Size(min = 6)
     private String password;
 
-    //@OneToMany
-    //@JoinColumn(name = "user_id")
-    // private List<User> users;
 
     public User() {
 
@@ -59,3 +58,5 @@ public class User {
         this.password = password;
 
     }
+
+}
