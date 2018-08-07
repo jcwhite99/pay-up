@@ -1,3 +1,4 @@
+
 package com.example.payup.Controllers;
 
 import com.example.payup.models.User;
@@ -42,8 +43,8 @@ public class UserController {
 
         if(!errors.hasErrors() && user.getPassword().equals(verify) && sameName.isEmpty()) {
             model.addAttribute("User", user);
-            userdao.save(user);
-            return "redirect:" + "/payup/user/home";
+            //userdao.save(user);
+            return "redirect:" + "/pay-up/User/add";
 
         } else {
             model.addAttribute("User", user);
@@ -89,7 +90,7 @@ public class UserController {
             Cookie c = new Cookie("User", user.getUsername());
             c.setPath("/");
             response.addCookie(c);
-            return "redirect:" + "/payup/user/home";
+            return "redirect:" + "/payup/Main/dashboard";
 
 
         } else {

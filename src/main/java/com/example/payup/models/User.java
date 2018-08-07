@@ -1,11 +1,12 @@
 package com.example.payup.models;
 
 import org.hibernate.validator.constraints.Email;
-
-import javax.persistence.*;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 
 @Entity
 public class User {
@@ -60,3 +61,4 @@ public class User {
     }
 
 }
+
