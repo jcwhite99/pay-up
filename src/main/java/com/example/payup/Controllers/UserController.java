@@ -29,7 +29,7 @@ public class UserController {
     @RequestMapping(value = "add")
 
     public String add(Model model) {
-        model.addAttribute("title", "User Sign up");
+        model.addAttribute("title", "Register");
         User User = new User();
         model.addAttribute("User", User);
         return "User/add";
@@ -44,7 +44,7 @@ public class UserController {
         if(!errors.hasErrors() && user.getPassword().equals(verify) && sameName.isEmpty()) {
             model.addAttribute("User", user);
             userdao.save(user);
-            return "redirect:" + "/pay-up/User/add";
+            return "redirect:" + "/pay-up/User/login";
 
         } else {
             model.addAttribute("User", user);
