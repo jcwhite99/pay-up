@@ -1,8 +1,8 @@
 package com.example.payup.Controllers;
 
+import com.example.payup.models.forms.Services;
 import com.example.payup.models.data.ServicesDao;
 import com.example.payup.models.forms.Company;
-import com.example.payup.models.forms.Services;
 import com.example.payup.models.data.CompanyDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -101,7 +101,7 @@ public class DashboardController {
 
 
     @RequestMapping(value = "remove", method = RequestMethod.POST)
-    public String processRemoveserviceForm(@RequestParam String[] Services){
+    public String processRemoveServiceForm(@RequestParam String[] Services){
 
         for(String service : Services){
             servicesdao.delete(service);
