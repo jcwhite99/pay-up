@@ -9,7 +9,7 @@ import org.springframework.data.repository.CrudRepository;
 
 @Repository
 @Transactional
-public interface CompanyDao extends CrudRepository<Company, Integer> {
+public interface CompanyDao extends CrudRepository<Company, Integer>{
 
 
 }
