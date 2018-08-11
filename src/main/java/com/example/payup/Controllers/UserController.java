@@ -90,7 +90,7 @@ public class UserController {
             Cookie c = new Cookie("User", user.getUsername());
             c.setPath("/");
             response.addCookie(c);
-            return "redirect:" + "/pay-up/Main/dashboard";
+            return "redirect:" + "/pay-up/dashboard/main";
 
 
         } else {
