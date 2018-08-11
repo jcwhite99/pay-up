@@ -1,14 +1,64 @@
 <!DOCTYPE html>
-
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 <body class="container">
 <h1 th:text="${title}">Dashboard</h1>
 
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+* {
+    box-sizing: border-box;
+}
 
-<h3>Welcome to the unfinished dashboard</h3>
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: 600px;
+}
 
 
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
+
+
+<h2>Select a company and services to create an invoice.</h2>
+
+<div class="row">
+    <div class="column" style="background-color:#aaa;">
+        <h2>Company</h2>
+     <form>
+
+        <h3>
+            <a href="/pay-up/dashboard/companyAdd"> Add </a>
+
+            <a href="/pay-up/dashboard/companyRemove"> Remove</a>
+        </h3>
+
+    </form>
+
+
+    </div>
+    <div class="column" style="background-color:#bbb;">
+        <h2>Service</h2>
+        <form>
+        <h3>
+            <a href="/pay-up/dashboard/servicesAdd"> Add </a>
+
+            <a href="/pay-up/dashboard/servicesRemove"> Remove</a>
+        </h3>
+        </form>
+    </div>
+    <div class="column" style="background-color:#ccc;">
+        <h2>Invoice</h2>
+        <p>invoice generated as user selects company and services</p>
+    </div>
+</div>
 
 </body>
 </html>
