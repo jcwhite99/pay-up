@@ -32,7 +32,7 @@ public class UserController {
         model.addAttribute("title", "Register");
         User User = new User();
         model.addAttribute("User", User);
-        return "User/add";
+        return "user/add";
 
     }
 
@@ -44,7 +44,7 @@ public class UserController {
         if(!errors.hasErrors() && user.getPassword().equals(verify) && sameName.isEmpty()) {
             model.addAttribute("User", user);
             userdao.save(user);
-            return "redirect:" + "/pay-up/User/login";
+            return "redirect:" + "/pay-up/user/login";
 
         } else {
             model.addAttribute("User", user);
@@ -59,7 +59,7 @@ public class UserController {
             if(!sameName.isEmpty()) {
                 model.addAttribute("message", "Username is taken, please select another one");
             }
-            return "User/add";
+            return "user/add";
 
         }
 
@@ -69,7 +69,7 @@ public class UserController {
     public String loginForm(Model model) {
         model.addAttribute("title", "Login");
         model.addAttribute(new User());
-        return "User/login";
+        return "user/login";
 
     }
 
@@ -81,7 +81,7 @@ public class UserController {
         if(u.isEmpty()) {
             model.addAttribute("message", "Invalid Username");
             model.addAttribute("title", "Login");
-            return "User/login";
+            return "user/login";
 
         }
 
@@ -90,14 +90,14 @@ public class UserController {
             Cookie c = new Cookie("User", user.getUsername());
             c.setPath("/");
             response.addCookie(c);
-            return "redirect:" + "/payup/Main/dashboard";
+            return "redirect:" + "/pay-up/Main/dashboard";
 
 
         } else {
             model.addAttribute("message", "Invalid Password");
             model.addAttribute("title", "Login");
 
-            return "User/login";
+            return "user/login";
 
         }
 
@@ -117,7 +117,7 @@ public class UserController {
 
         }
 
-        return "User/login";
+        return "user/login";
 
     }
 
