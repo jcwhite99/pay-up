@@ -23,7 +23,6 @@ import java.util.List;
 @RequestMapping("/pay-up/user")
 public class UserController {
     @Autowired
-
     private UserDao userdao;
 
     @RequestMapping(value = "add")
