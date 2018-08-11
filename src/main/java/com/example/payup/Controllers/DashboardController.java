@@ -31,6 +31,9 @@ public class DashboardController {
     @Autowired
     private CompanyDao companydao;
 
+    @Autowired
+    private ServicesDao servicesdao;
+
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayAddCompanyForm(Model model) {
         model.addAttribute("title", "Add Company");
@@ -68,8 +71,6 @@ public class DashboardController {
         return "dashboard/main";
     }
 
-    @Autowired
-    private ServicesDao servicesdao;
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayAddServicesForm(Model model) {
@@ -101,10 +102,10 @@ public class DashboardController {
 
 
     @RequestMapping(value = "remove", method = RequestMethod.POST)
-    public String processRemoveServiceForm(@RequestParam String[] Services){
+    public String processRemoveServiceForm(@RequestParam int[] serviceIds){
 
-        for(String service : Services){
-            servicesdao.delete(service);
+        for(int serviceId : serviceIds ){
+            servicesdao.delete(serviceId);
         }
 
         return "dashboard/main";
