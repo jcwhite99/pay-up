@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<h1 th:text="${title}">Remove Company</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<form method="post">
+
+    <div th:each="company : ${company}" class="checkbox">
+        <input type="checkbox" name="companyIds" th:value="${company.id}" th:id="${company.id}"/>
+        <label th:for="${company.id" th:text="${company.name}"></label>
+        <br/>
+    </div>
+
+    <input type="submit" value="Remove Company" />
+</form>
+
+</body>
+</html>

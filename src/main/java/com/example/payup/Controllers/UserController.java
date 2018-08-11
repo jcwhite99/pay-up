@@ -1,7 +1,7 @@
 
 package com.example.payup.Controllers;
 
-import com.example.payup.models.User;
+import com.example.payup.models.forms.User;
 import com.example.payup.models.data.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -40,7 +40,7 @@ public class UserController {
 
         List<User> sameName = userdao.findByUsername(user.getUsername());
 
-        if(!errors.hasErrors() && user.getPassword().equals(verify) && sameName.isEmpty()) {
+        if(!errors.hasErrors()  && user.getPassword().equals(verify)&& sameName.isEmpty()) {
             model.addAttribute("User", user);
             userdao.save(user);
             return "redirect:" + "/pay-up/user/login";

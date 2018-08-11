@@ -1,4 +1,4 @@
-package com.example.payup.models;
+package com.example.payup.models.forms;
 
 import org.hibernate.validator.constraints.Email;
 import javax.validation.constraints.NotNull;
@@ -22,20 +22,28 @@ public class Company {
     @Email
     private String email;
 
+    public Company(String company, String email){
+        this.company = company;
+        this.email = email;
 
+    }
 
-    public Company() {
+    public Company() {}
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getCompany() {
         return company;
-
     }
 
     public void setCompany(String company) {
         this.company = company;
-
     }
 
     public String getEmail() {
@@ -44,8 +52,5 @@ public class Company {
 
     public void setEmail(String email) {
         this.email = email;
-
     }
-
-
 }

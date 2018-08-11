@@ -1,4 +1,4 @@
-package com.example.payup.models;
+package com.example.payup.models.forms;
 
 import org.hibernate.validator.constraints.Email;
 import javax.validation.constraints.NotNull;
