@@ -1,4 +1,4 @@
-package com.example.payup.models.data;
+/*package com.example.payup.models.data;
 
 import com.example.payup.models.forms.Services;
 import org.springframework.data.repository.CrudRepository;
@@ -12,4 +12,4 @@ public interface ServicesDao extends CrudRepository<Services, Integer > {
 
 
 }
-
+*/

@@ -1,7 +1,7 @@
 package com.example.payup.Controllers;
 
-import com.example.payup.models.forms.Services;
-import com.example.payup.models.data.ServicesDao;
+//import com.example.payup.models.forms.Services;
+//import com.example.payup.models.data.ServicesDao;
 import com.example.payup.models.forms.Company;
 import com.example.payup.models.data.CompanyDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +31,8 @@ public class DashboardController {
     @Autowired
     private CompanyDao companydao;
 
-    @Autowired
-    private ServicesDao servicesdao;
+   // @Autowired
+   // private ServicesDao servicesdao;
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayAddCompanyForm(Model model) {
@@ -72,7 +72,7 @@ public class DashboardController {
     }
 
 
-    @RequestMapping(value = "add", method = RequestMethod.GET)
+    /*@RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayAddServicesForm(Model model) {
         model.addAttribute("title", "Add Service");
         model.addAttribute(new Services ());
@@ -102,14 +102,14 @@ public class DashboardController {
 
 
     @RequestMapping(value = "remove", method = RequestMethod.POST)
-    public String processRemoveServiceForm(@RequestParam int[] serviceIds){
+    public String processRemoveServiceForm(@RequestParam int serviceIds){
 
         for(int serviceId : serviceIds ){
             servicesdao.delete(serviceId);
         }
 
         return "dashboard/main";
-    }
+    }*/
 
 }
 
