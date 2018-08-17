@@ -35,10 +35,14 @@ public class DashboardController {
    // private ServicesDao servicesdao;
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
-    public String displayAddCompanyForm(Model model) {
+
+    public String add(Model model) {
         model.addAttribute("title", "Add Company");
-        model.addAttribute(new Company ());
+        Company Company = new Company();
+        model.addAttribute("Company", Company);
         return "company/add";
+
+
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)

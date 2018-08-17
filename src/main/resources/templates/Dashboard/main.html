@@ -33,30 +33,37 @@
     <div class="column" style="background-color:#aaa;">
         <h2>Company</h2>
      <form>
-
-        <h3>
-            <a href="/pay-up/company/add"> Add </a>
+         <h3>
+            <a href="company/add"> Add </a>
             <br/>
-            <a href="/pay-up/company/remove"> Remove</a>
-        </h3>
-
-    </form>
+            <a href="company/remove"> Remove</a>
+         </h3>
+     </form>
 
     </div>
     <div class="column" style="background-color:#bbb;">
         <h2>Service</h2>
         <form>
         <h3>
-            <a href="/pay-up/dashboard/servicesAdd"> Add </a>
+            <a href="service/add"> Add </a>
             <br/>
-            <a href="/pay-up/dashboard/servicesRemove"> Remove</a>
+            <a href="service/remove"> Remove</a>
         </h3>
         </form>
     </div>
     <div class="column" style="background-color:#ccc;">
         <h2>Invoice</h2>
         <p>invoice generated as user selects company and services</p>
+       <div>
+           <form>
+            <textarea cols="59" rows="25" readonly></textarea>
+            <br />
+            <input type="submit" value="Submit">
+            <input type="reset">
+           </form>
+       </div>
     </div>
+
 </div>
 
 </body>
