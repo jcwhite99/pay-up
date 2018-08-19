@@ -5,26 +5,8 @@
 <h1 th:text="${title}">Dashboard</h1>
 
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <style>
-* {
-    box-sizing: border-box;
-}
 
-
-.column {
-    float: left;
-    width: 33.33%;
-    padding: 10px;
-    height: 600px;
-}
-
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-</style>
+<link rel="stylesheet" href="@{/css/dashboard.css}"/>
 
 
 <h2>Select a company and services to create an invoice.</h2>
@@ -54,7 +36,7 @@
     <div class="column" style="background-color:#ccc;">
         <h2>Invoice</h2>
           <form method="post">
-            <textarea name="message" cols="52" rows="23"></textarea>
+            <textarea name="message" cols="175" rows="23"></textarea>
             <br/>
             <input type="submit" value="Submit"/>
             <input type="submit" value="Reset"/>
