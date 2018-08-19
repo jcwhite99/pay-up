@@ -1,4 +1,4 @@
-/*package com.example.payup.models.forms;
+package com.example.payup.models.forms;
 
 import org.hibernate.validator.constraints.Email;
 
@@ -26,6 +26,7 @@ public class Services {
     @NotNull
     @Size(min = 1, max = 6)
     private int price;
+
 
     public Services(String services, int date, int price){
         this.services = services;
@@ -60,4 +61,4 @@ public class Services {
         this.price = price;
     }
 }
-*/
+
