@@ -20,11 +20,10 @@ public class Services {
     private String services;
 
     @NotNull
-    @Size(min = 4, max = 8)
     private int date;
 
     @NotNull
-    @Size(min = 1, max = 6)
+    @Size(min = 1, max = 1000)
     private int price;
 
 

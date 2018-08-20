@@ -1,6 +1,8 @@
 package com.example.payup.Controllers;
 
 
+import com.example.payup.models.data.ServicesDao;
+import com.example.payup.models.forms.Services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("/pay-up/dashboard")
+@RequestMapping("/pay-up/services")
 public class ServicesController {
 
     @Autowired
@@ -22,8 +24,8 @@ public class ServicesController {
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayAddServicesForm(Model model) {
         model.addAttribute("title", "Add Services");
-        model.addAttribute(new Services ());
-        return "service/add";
+        model.addAttribute(new Services());
+        return "services/add";
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
@@ -31,7 +33,7 @@ public class ServicesController {
                                          Errors errors, Model model) {
         if (errors.hasErrors()) {
             model.addAttribute("title", "Add Services");
-            return "service/add";
+            return "services/add";
 
         }
 
@@ -48,14 +50,14 @@ public class ServicesController {
 
 
 
-    @RequestMapping(value = "remove", method = RequestMethod.POST)
-    public String processRemoveServiceForm(@RequestParam int serviceIds){
+    //@RequestMapping(value = "remove", method = RequestMethod.POST)
+    //public String processRemoveServiceForm(@RequestParam int serviceIds){
 
-        for(int serviceId : serviceIds ){
-            servicesdao.delete(serviceId);
+        //for(int serviceId : serviceIds ){
+           // servicesdao.delete(serviceId);
         }
 
-        return "dashboard/main";
-    }
-}
+        //return "dashboard/main";
+    //}
+//}
 
