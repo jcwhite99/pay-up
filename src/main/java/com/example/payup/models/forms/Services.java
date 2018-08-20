@@ -23,7 +23,6 @@ public class Services {
     private int date;
 
     @NotNull
-    @Size(min = 1, max = 1000)
     private int price;
 
 

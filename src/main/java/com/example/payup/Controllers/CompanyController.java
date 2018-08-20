@@ -12,17 +12,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
+
 @Controller
-@RequestMapping("pay-up/company")
+@RequestMapping("/pay-up/company")
 public class CompanyController {
 
     @Autowired
     private CompanyDao companydao;
 
-
-
-@RequestMapping(value = "add", method = RequestMethod.GET)
-public String displayAddCompanyForm(Model model) {
+    @RequestMapping(value = "add", method = RequestMethod.GET)
+    public String displayAddCompanyForm(Model model) {
     model.addAttribute("title", "Add Company");
     model.addAttribute(new Company());
     return "company/add";

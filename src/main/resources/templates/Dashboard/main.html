@@ -36,11 +36,30 @@
     <div class="column" style="background-color:#ccc;">
         <h2>Invoice</h2>
           <form method="post">
-            <textarea name="message" cols="52" rows="23"></textarea>
-            <br/>
-            <input type="submit" value="Submit"/>
-            <input type="submit" value="Reset"/>
-            <input type="submit" value="Save"/>
+         <style>
+              table {
+              border-collapse: collapse;
+              width: 100%;
+            }
+
+              th, td {
+              padding: 8px;
+              text-align: left;
+              border-bottom: 1px solid #ddd;
+            }
+         </style>
+
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Service/Description</th>
+                <th>Price</th>
+            </tr>
+        </table>
+              <br/>
+              <input type="submit" value="Submit"/>
+              <input type="submit" value="Reset"/>
+              <input type="submit" value="Save"/>
            </form>
     </div>
 

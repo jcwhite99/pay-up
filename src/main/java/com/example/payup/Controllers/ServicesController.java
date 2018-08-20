@@ -42,20 +42,20 @@ public class ServicesController {
     }
 
     @RequestMapping(value = "remove", method = RequestMethod.GET)
-    public String displayRemoveServiceForm(Model model){
+    public String displayRemoveServiceForm(Model model) {
         model.addAttribute("services", servicesdao.findAll());
         model.addAttribute("title", "Remove Services");
         return "services/remove";
     }
-
+}
 
 
     //@RequestMapping(value = "remove", method = RequestMethod.POST)
     //public String processRemoveServiceForm(@RequestParam int serviceIds){
 
-        //for(int serviceId : serviceIds ){
-           // servicesdao.delete(serviceId);
-        }
+        //for(int servicesId : servicesIds ){
+            //servicesdao.delete(servicesId);
+        //}
 
         //return "dashboard/main";
     //}
