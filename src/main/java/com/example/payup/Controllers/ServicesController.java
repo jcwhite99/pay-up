@@ -38,7 +38,7 @@ public class ServicesController {
         }
 
         servicesdao.save(newServices);
-        return "redirect: dashboard/main";
+        return "redirect:" + "/pay-up/dashboard";
     }
 
     @RequestMapping(value = "remove", method = RequestMethod.GET)
