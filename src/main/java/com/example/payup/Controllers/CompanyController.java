@@ -56,7 +56,7 @@ public class CompanyController {
             companydao.delete(companyId);
         }
 
-        return "/pay-up/dashboard";
+        return "dashboard/main";
     }
 
 }

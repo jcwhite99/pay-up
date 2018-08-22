@@ -10,18 +10,13 @@
 
 <form method="post" th:action="@{/pay-up/company/remove}" style="width:600px;" th:object="${Service}">
 
-    <div class="form-group">
-        <label for="name-field"> Company:</label>
-        <input class="form-control" id= "name-field" type="text" name="name" th:value="${name}" th:field="*{name}" />
-    </div>
-
-    <!--<div th:each="company : ${companies}" class="checkbox">
+    <div th:each="company : ${companies}" class="checkbox">
         <input type="checkbox" name="companyIds" th:value="${company.id}" th:id="${company.id}"/>
         <label th:for="${company.id}" th:text="${company.name}"></label>
         <br/>
-    </div>-->
+    </div>
 
-    <input type="submit" value="Remove Company" />
+    <input type="submit" value="Remove Company"/>
 </form>
 
 </body>
