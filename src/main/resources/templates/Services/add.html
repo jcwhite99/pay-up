@@ -6,18 +6,18 @@
 <nav th:replace="fragments :: navigation"></nav>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<form method="post" style="max-width:600px;">
+<form method="post" style="max-width:600px;" th:object="${services}">
     <div class="form-group">
-        <label for="date-field">Date:</label>
+        <label th:for="date-field">Date:</label>
         <input class="form-control" id="date-field" type="date" name="date" th:value="${date}"/>
     </div>
     <div class="form-group">
-        <label for="Service-field">Service:</label>
+        <label th:for="Service-field">Service:</label>
         <input class="form-control" id="service-field" type="text" name="service" th:value="${service}"/>
     </div>
     <div class="form-group">
-        <label for="price-field">Price:</label>
-        <input class="form-control" id="price-field" type="number" name="quantity" min="1" max="1000" th:value="${quantity}"/>
+        <label th:for="price-field">Price:</label>
+        <input class="form-control" id="price-field" type="number" name="price" min="1" max="1000" th:value="${price}"/>
     </div>
 
     <input type="submit" value="Add Service"/>

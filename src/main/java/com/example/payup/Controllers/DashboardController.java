@@ -12,7 +12,7 @@ public class DashboardController {
 
     @RequestMapping(value = "")
     public String index(Model model) {
-        //model.addAttribute("company", companydao.findAll());
+        //model.addAttribute("company", companyDao.findAll());
         model.addAttribute("title", "Dashboard");
         return "dashboard/main";
     }

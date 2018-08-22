@@ -1,4 +1,4 @@
-package com.example.payup.models.forms;
+package com.example.payup.models;
 
 import org.hibernate.validator.constraints.Email;
 

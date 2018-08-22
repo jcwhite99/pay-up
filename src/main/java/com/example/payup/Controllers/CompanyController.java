@@ -1,7 +1,7 @@
 package com.example.payup.Controllers;
 
 import com.example.payup.models.data.CompanyDao;
-import com.example.payup.models.forms.Company;
+import com.example.payup.models.Company;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,7 +33,8 @@ public class CompanyController {
                                         Errors errors, Model model) {
         if (errors.hasErrors()) {
             model.addAttribute("title", "Add Company");
-            return "company/add";
+            model.addAttribute("company", newCompany);
+            return "redirect:/company/add";
 
         }
 

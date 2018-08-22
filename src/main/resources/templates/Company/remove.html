@@ -8,13 +8,18 @@
 <nav th:replace="fragments :: navigation"></nav>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<form method="post">
+<form method="post" th:action="@{/pay-up/company/remove}" style="width:600px;" th:object="${Service}">
 
-    <div th:each="company : ${company}" class="checkbox">
-        <input type="checkbox" name="companyIds" th:value="${company.id}" th:id="${company.id}"/>
-        <label th:for="${company.id" th:text="${company.name}"></label>
-        <br/>
+    <div class="form-group">
+        <label for="name-field"> Company:</label>
+        <input class="form-control" id= "name-field" type="text" name="name" th:value="${name}" th:field="*{name}" />
     </div>
+
+    <!--<div th:each="company : ${companies}" class="checkbox">
+        <input type="checkbox" name="companyIds" th:value="${company.id}" th:id="${company.id}"/>
+        <label th:for="${company.id}" th:text="${company.name}"></label>
+        <br/>
+    </div>-->
 
     <input type="submit" value="Remove Company" />
 </form>

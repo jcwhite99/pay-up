@@ -7,14 +7,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
 
-<form method="post" style="max-width:600px;">
+<form method="post" th:action="@{/pay-up/company/add}" style="width:600px;" th:object="${company}">
     <div class="form-group">
-        <label for="company-field">Company:</label>
-        <input class="form-control" id="company-field" type="text" name="company" th:value="${company}"/>
+        <label for="name-field"> Company:</label>
+        <input class="form-control" id= "name-field" type="text" name="name" th:value="${name}" th:field="*{name}" />
     </div>
     <div class="form-group">
         <label for="email-field">Email:</label>
-        <input class="form-control" id="email-field" type="email" name="email" th:value="${email}"/>
+        <input class="form-control" id="email-field" type="email" name="email" th:value="${email}" th:field="*{email}"/>
     </div>
 
     <input type="submit" value="Add Company"/>

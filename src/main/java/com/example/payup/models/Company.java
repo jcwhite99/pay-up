@@ -1,7 +1,6 @@
-package com.example.payup.models.forms;
+package com.example.payup.models;
 
 import org.hibernate.validator.constraints.Email;
-
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.persistence.Entity;
@@ -17,15 +16,15 @@ public class Company {
 
     @NotNull
     @Size(min = 1, max = 15)
-    private String company;
+    private String name;
 
     @NotNull
     @Email
     private String email;
 
 
-    public Company(String company, String email){
-        this.company = company;
+    public Company(String name, String email){
+        this.name = name;
         this.email = email;
 
     }
@@ -33,15 +32,17 @@ public class Company {
     public Company() {}
 
     public int getId() {
-        return id;
+     return id;
+    }
+    public void setId(int anId){
+        this.id = anId;
+    }
+    public String getName() {
+        return name;
     }
 
-    public String getCompany() {
-        return company;
-    }
-
-    public void setCompany(String company) {
-        this.company = company;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {

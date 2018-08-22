@@ -1,7 +1,7 @@
 
 package com.example.payup.Controllers;
 
-import com.example.payup.models.forms.User;
+import com.example.payup.models.User;
 import com.example.payup.models.data.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
