@@ -8,11 +8,11 @@
 <nav th:replace="fragments :: navigation"></nav>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<form method="post">
+<form method="post"th:action="@{/pay-up/services/remove}" style="width:600px;" th:object="${services}">
 
-    <div th:each="Services : ${services}" class="checkbox">
-        <input type="checkbox" name="services" th:value="${services}" th:id="${services}"/>
-        <label th:for="${services" th:text="${services}"></label>
+    <div th:each="services : ${service}" class="checkbox">
+        <input type="checkbox" name="servicesIds" th:value="${services.id}" th:id="${services.id}"/>
+        <label th:for="${services.id}" th:text="${services.job}"></label>
         <br/>
     </div>
 
