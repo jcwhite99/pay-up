@@ -10,6 +10,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 
@@ -46,17 +47,14 @@ public class ServicesController {
         model.addAttribute("title", "Remove Services");
         return "services/remove";
     }
-}
-
 
     //@RequestMapping(value = "remove", method = RequestMethod.POST)
-    //public String processRemoveServiceForm(@RequestParam int serviceIds){
+    //public String processRemoveServiceForm(@RequestParam int servicesIds){
 
         //for(int servicesId : servicesIds ){
             //servicesdao.delete(servicesId);
         //}
-
         //return "dashboard/main";
-    //}
+    }
 //}
 

@@ -6,18 +6,18 @@
 <nav th:replace="fragments :: navigation"></nav>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<form method="post" th:action="@{/pay-up/services/add}" style="width:600px;" th:object="${services}">
+<form method="post" th:action="@{/pay-up/services/add}" style="width:600px;"> <!--th:object="${services}"-->
     <div class="form-group">
         <label for="date-field">Date:</label>
-        <input class="form-control" id="date-field" type="date" name="date" th:value="${date}" th:field="*{date}" />
+        <input class="form-control" id="date-field" type="date" name="date" th:value="${date}"/> <!--th:field="*{date}"-->
     </div>
     <div class="form-group">
         <label for="job-field">Service:</label>
-        <input class="form-control" id="job-field" type="text" name="job" th:value="${job}" th:field="*{job}" />
+        <input class="form-control" id="job-field" type="text" name="job" th:value="${job}"/> <!-- th:field="*{job}"-->
     </div>
     <div class="form-group">
         <label for="price-field">Price:</label>
-        <input class="form-control" id="price-field" type="price" name="price" min="1" max="5000" th:value="${price}" th:field="*{price}" />
+        <input class="form-control" id="price-field" type="price" name="price" min="1" max="5000" th:value="${price}"/> <!-- th:field="*{price}"-->
     </div>
 
     <input type="submit" value="Add Service"/>
