@@ -20,6 +20,11 @@
             <br/>
             <a href="/pay-up/company/remove"> Remove</a>
          </h3>
+         <div th:each="company : ${companies}" class="checkbox">
+             <input type="checkbox" name="companyIds" th:value="${company.id}" th:id="${company.id}"/>
+             <label th:for="${company.id}" th:text="${company.name}"></label>
+             <br/>
+         </div>
      </form>
 
     </div>
@@ -31,6 +36,19 @@
             <br/>
             <a href="/pay-up/services/remove"> Remove</a>
         </h3>
+            <div class="form-group">
+                <label for="date-field">Date:</label>
+                <input class="form-control" id="date-field" type="date" name="date" th:value="${date}"/> <!--th:field="*{date}"-->
+            </div>
+            <div class="form-group">
+                <label for="job-field">Service:</label>
+                <input class="form-control" id="job-field" type="text" name="job" th:value="${job}"/> <!-- th:field="*{job}"-->
+            </div>
+            <div class="form-group">
+                <label for="price-field">Price:</label>
+                <input class="form-control" id="price-field" type="price" name="price" min="1" max="5000" th:value="${price}"/> <!-- th:field="*{price}"-->
+            </div>
+
         </form>
     </div>
     <div class="column" style="background-color:#ccc;">
@@ -60,7 +78,7 @@
               <h5>NET 30 days.  A finance charge of 1.5% will be added to unpaid balances after 30 days.</h5>
               <br/>
               <input type="submit" value="Submit"/>
-              <input type="submit" value="Reset"/>
+              <input type="reset" value="Reset"/>
               <input type="submit" value="Save"/>
            </form>
     </div>
