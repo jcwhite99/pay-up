@@ -9,7 +9,7 @@
 <link rel="stylesheet" th:href="@{/css/dashboard.css}"/>
 
 
-<h2>Select a Company and services to create an invoice.</h2>
+<h2>Select a company and services to create an invoice.</h2>
 
 <div class="row">
     <div class="column" style="background-color:#aaa;">
@@ -20,10 +20,10 @@
             <br/>
             <a href="/pay-up/company/remove"> Remove</a>
          </h3>
-         <div th:each="company : ${companies}" class="checkbox">
+         <br/>
+         <div style="text-align:center"  th:each="company : ${companies}" class="checkbox">
              <input type="checkbox" name="companyIds" th:value="${company.id}" th:id="${company.id}"/>
              <label th:for="${company.id}" th:text="${company.name}"></label>
-             <br/>
          </div>
      </form>
 
@@ -36,19 +36,11 @@
             <br/>
             <a href="/pay-up/services/remove"> Remove</a>
         </h3>
-            <div class="form-group">
-                <label for="date-field">Date:</label>
-                <input class="form-control" id="date-field" type="date" name="date" th:value="${date}"/> <!--th:field="*{date}"-->
+            <div style="text-align:center" th:each="services : ${service}" class="checkbox">
+                <input type="checkbox" name="servicesIds" th:value="${services.id}" th:id="${services.id}"/>
+                <label th:for="${services.id}" th:text="${services.job}"></label>
+                <br/>
             </div>
-            <div class="form-group">
-                <label for="job-field">Service:</label>
-                <input class="form-control" id="job-field" type="text" name="job" th:value="${job}"/> <!-- th:field="*{job}"-->
-            </div>
-            <div class="form-group">
-                <label for="price-field">Price:</label>
-                <input class="form-control" id="price-field" type="price" name="price" min="1" max="5000" th:value="${price}"/> <!-- th:field="*{price}"-->
-            </div>
-
         </form>
     </div>
     <div class="column" style="background-color:#ccc;">
