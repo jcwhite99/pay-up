@@ -15,7 +15,7 @@ public class Company {
     private int id;
 
     @NotNull
-    @Size(min = 1, max = 15)
+    @Size(min = 1, max = 30)
     private String name;
 
     @NotNull
