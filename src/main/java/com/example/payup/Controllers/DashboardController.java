@@ -1,8 +1,7 @@
 package com.example.payup.Controllers;
 
-import com.example.payup.models.Company;
 import com.example.payup.models.data.CompanyDao;
-import com.example.payup.models.data.ServicesDao;
+import com.example.payup.models.data.ServiceDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,14 +16,14 @@ public class DashboardController {
     private CompanyDao companydao;
 
     @Autowired
-    private ServicesDao servicesdao;
+    private ServiceDao servicedao;
 
 
     @RequestMapping(value = "")
     public String index (Model model) {
         model.addAttribute("title", "Dashboard");
         model.addAttribute("companies", companydao.findAll());
-        model.addAttribute("services", servicesdao.findAll());
+        model.addAttribute("services", servicedao.findAll());
         return "dashboard/main";
     }
 

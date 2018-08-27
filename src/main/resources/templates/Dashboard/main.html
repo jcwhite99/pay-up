@@ -32,13 +32,13 @@
         <h2>Service</h2>
         <form>
         <h3>
-            <a href="/pay-up/services/add"> Add </a>
+            <a href="/pay-up/service/add"> Add </a>
             <br/>
-            <a href="/pay-up/services/remove"> Remove</a>
+            <a href="/pay-up/service/remove"> Remove</a>
         </h3>
-            <div style="text-align:center" th:each="services : ${service}" class="checkbox">
-                <input type="checkbox" name="servicesIds" th:value="${services.id}" th:id="${services.id}"/>
-                <label th:for="${services.id}" th:text="${services.job}"></label>
+            <div style="text-align:center" th:each="service : ${services}" class="checkbox">
+                <input type="checkbox" name="serviceIds" th:value="${service.id}" th:id="${service.id}"/>
+                <label th:for="${service.id}" th:text="${service.job}"></label>
                 <br/>
             </div>
         </form>

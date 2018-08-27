@@ -1,7 +1,5 @@
 package com.example.payup.models;
 
-import org.hibernate.validator.constraints.Email;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,7 +7,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-public class Services {
+public class Service {
 
     @Id
     @GeneratedValue
@@ -26,23 +24,21 @@ public class Services {
     private int price;
 
 
-    public Services(String job, int date, int price){
+    public Service(String job, int date, int price) {
         this.job = job;
         this.date = date;
         this.price = price;
 
     }
 
-    public Services() {}
-
-    public String getJob() {
-        return job;
+    public Service() {
     }
-
-    public void setJob(String services) {
-        this.job = services;
+    public int getId() {
+        return id;
     }
-
+    public void setId(int anId){
+        this.id = anId;
+    }
     public int getDate() {
         return date;
     }
@@ -51,11 +47,19 @@ public class Services {
         this.date = date;
     }
 
+    public String getJob() {
+        return job;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
+    }
+
     public int getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(int price){
         this.price = price;
     }
 }

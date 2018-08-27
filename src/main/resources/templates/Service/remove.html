@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<h1 th:text="${title}">Remove Service</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<form method="post" style="width:600px;" th:action="@{/pay-up/service/remove}" th:object="${service}">
+
+    <div th:each="service : ${services}" class="checkbox">
+        <input type="checkbox" name="serviceIds" th:value="${service.id}" th:id="${service.id}"/>
+        <label th:for="${service.id}" th:text="${service.job}"></label>
+        <br/>
+    </div>
+
+    <input type="submit" value="Remove Service"/>
+</form>
+
+</body>
+</html>
