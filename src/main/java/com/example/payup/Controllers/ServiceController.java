@@ -52,7 +52,7 @@ public class ServiceController {
     @RequestMapping(value = "remove", method = RequestMethod.POST)
     public String processRemoveServiceForm(@RequestParam int [] serviceIds){
 
-        for(int serviceId : serviceIds ){
+        for(int serviceId : serviceIds){
             servicedao.delete(serviceId);
         }
         return "dashboard/main";

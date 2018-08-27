@@ -15,16 +15,7 @@ public class HomeController {
         model.addAttribute("title", "Pay Up!");
         return "home/index";
     }
-
-    @RequestMapping(value = "/error")
-    public String error (Model model) {
-
-        model.addAttribute("title", "Error 404");
-        return "home/error";
-
-
-    }
-
+    
 }
 
 

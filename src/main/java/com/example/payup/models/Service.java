@@ -14,19 +14,19 @@ public class Service {
     private int id;
 
     @NotNull
-    @Size(min = 5, max = 15)
-    private String job;
+    private int date;
 
     @NotNull
-    private int date;
+    @Size(min = 5, max = 15)
+    private String job;
 
     @NotNull
     private int price;
 
 
-    public Service(String job, int date, int price) {
-        this.job = job;
+    public Service(int date, String job, int price) {
         this.date = date;
+        this.job = job;
         this.price = price;
 
     }
