@@ -1,6 +1,5 @@
 package com.example.payup.Controllers;
 
-
 import com.example.payup.models.data.ServicesDao;
 import com.example.payup.models.Services;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +33,7 @@ public class ServicesController {
         if (errors.hasErrors()) {
             model.addAttribute("title", "Add Services");
             model.addAttribute("services", newServices);
-            return "redirect:/pay-up/services/add";
+            return "redirect:/services/add";
 
         }
 
@@ -53,7 +52,7 @@ public class ServicesController {
     public String processRemoveServiceForm(@RequestParam int [] servicesIds){
 
         for(int servicesId : servicesIds ){
-            //servicesdao.delete(servicesId);
+            servicesdao.delete(servicesId);
         }
         return "dashboard/main";
     }

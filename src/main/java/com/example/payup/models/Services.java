@@ -17,7 +17,7 @@ public class Services {
 
     @NotNull
     @Size(min = 5, max = 15)
-    private String services;
+    private String job;
 
     @NotNull
     private int date;
@@ -26,8 +26,8 @@ public class Services {
     private int price;
 
 
-    public Services(String services, int date, int price){
-        this.services = services;
+    public Services(String job, int date, int price){
+        this.job = job;
         this.date = date;
         this.price = price;
 
@@ -35,12 +35,12 @@ public class Services {
 
     public Services() {}
 
-    public String getServices() {
-        return services;
+    public String getJob() {
+        return job;
     }
 
-    public void setServices(String services) {
-        this.services = services;
+    public void setJob(String services) {
+        this.job = services;
     }
 
     public int getDate() {
