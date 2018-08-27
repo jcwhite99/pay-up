@@ -34,7 +34,7 @@ public class ServicesController {
         if (errors.hasErrors()) {
             model.addAttribute("title", "Add Services");
             model.addAttribute("services", newServices);
-            return "services/add";
+            return "redirect:/pay-up/services/add";
 
         }
 
@@ -49,13 +49,13 @@ public class ServicesController {
         return "services/remove";
     }
 
-    //@RequestMapping(value = "remove", method = RequestMethod.POST)
-    //public String processRemoveServiceForm(@RequestParam int servicesIds){
+    @RequestMapping(value = "remove", method = RequestMethod.POST)
+    public String processRemoveServiceForm(@RequestParam int [] servicesIds){
 
-        //for(int servicesId : servicesIds ){
+        for(int servicesId : servicesIds ){
             //servicesdao.delete(servicesId);
-        //}
-        //return "dashboard/main";
+        }
+        return "dashboard/main";
     }
-//}
+}
 
