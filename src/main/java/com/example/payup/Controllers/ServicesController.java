@@ -33,6 +33,7 @@ public class ServicesController {
                                          Errors errors, Model model) {
         if (errors.hasErrors()) {
             model.addAttribute("title", "Add Services");
+            model.addAttribute("services", newServices);
             return "services/add";
 
         }

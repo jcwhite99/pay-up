@@ -22,9 +22,9 @@ public class CompanyController {
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayAddCompanyForm(Model model) {
-    model.addAttribute("title", "Add Company");
-    model.addAttribute(new Company());
-    return "company/add";
+        model.addAttribute("title", "Add Company");
+        model.addAttribute(new Company());
+        return "company/add";
 
 }
 
