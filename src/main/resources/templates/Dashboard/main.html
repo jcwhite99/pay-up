@@ -37,6 +37,7 @@
             <br/>
             <a href="/pay-up/service/remove"> Remove</a>
         </h3>
+            <br/>
             <div style="text-align:center" th:each="service : ${services}" class="checkbox">
                 <input type="checkbox" name="serviceIds" th:value="${service.id}" th:id="${service.id}"/>
                 <label th:for="${service.id}" th:text="${service.job}"></label>

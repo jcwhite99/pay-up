@@ -45,7 +45,7 @@ public class ServiceController {
 
     @RequestMapping(value = "remove", method = RequestMethod.GET)
     public String displayRemoveServiceForm(Model model) {
-        model.addAttribute("service", servicedao.findAll());
+        model.addAttribute("services", servicedao.findAll());
         model.addAttribute("title", "Remove Service");
         return "service/remove";
     }
