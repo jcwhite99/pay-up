@@ -14,7 +14,7 @@ public class Service {
     private int id;
 
     @NotNull
-    private int date;
+    private String date;
 
     @NotNull
     @Size(min = 5, max = 15)
@@ -24,7 +24,7 @@ public class Service {
     private int price;
 
 
-    public Service(int date, String job, int price) {
+    public Service(String date, String job, int price) {
         this.date = date;
         this.job = job;
         this.price = price;
@@ -39,11 +39,11 @@ public class Service {
     public void setId(int anId){
         this.id = anId;
     }
-    public int getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

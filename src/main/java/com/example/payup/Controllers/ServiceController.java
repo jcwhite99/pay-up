@@ -31,6 +31,7 @@ public class ServiceController {
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public String processAddServiceForm(@ModelAttribute @Valid Service newService,
                                         Errors errors, Model model) {
+        //System.out.println(errors);
         if (errors.hasErrors()) {
             model.addAttribute("title", "Add Service");
             model.addAttribute("service", newService);
