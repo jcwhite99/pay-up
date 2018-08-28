@@ -13,8 +13,9 @@
 
 <div class="row">
     <div class="column" style="background-color:#aaa;">
+        <!--<script th:src="@{/js/script.js"}/>-->
         <h2>Company</h2>
-     <form>
+     <form> <!--id="form1"-->
          <h3>
             <a href="/pay-up/company/add"> Add </a>
             <br/>
@@ -45,7 +46,7 @@
     </div>
     <div class="column" style="background-color:#ccc;">
         <h2>Invoice</h2>
-          <form method="post">
+          <form method="post"> <!--id="form2"-->
          <style>
               table {
               border-collapse: collapse;
@@ -66,6 +67,7 @@
                 <th>Price</th>
             </tr>
         </table>
+                  <!--<input name=a type=text>-->
               </div>
               <h5>NET 30 days.  A finance charge of 1.5% will be added to unpaid balances after 30 days.</h5>
               <h5> To pay your bill please click  <a href="/pay-up/payments">HERE</a> to be rerouted to the payment screen.

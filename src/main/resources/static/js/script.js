@@ -1,10 +1,18 @@
-function FillSelection(f){
-    if(f.selectiontoo.checked == true){
-    f.selectioncompany.value = f.invoicecompany.value;
-    f.selectionservices.value = f.invoiceservices.value;
-    }
+jQuery(function( $ ) {
 
-}
+
+  function copyForms( $form1 , $form2 ) {
+    $(':input[company]', $form2).val(function() {
+      return $(':input[company=' + this.company + ']', $form1).val();
+    });
+  }
+
+  $('#copy').on('click', function() {
+    copyForms(  $('#form1') , $('#form2')  );
+  });
+
+
+});
 
 
 

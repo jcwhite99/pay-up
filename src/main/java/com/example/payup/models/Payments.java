@@ -1,5 +1,7 @@
 package com.example.payup.models;
 
+import org.hibernate.validator.constraints.Email;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,11 +16,12 @@ public class Payments {
     private int id;
 
     @NotNull
+    @Email
     @Size(min = 1, max = 30)
-    private String name;
+    private String email;
 
-    public Payments(String name) {
-        this.name = name;
+    public Payments(String email) {
+        this.email = email;
     }
 
     public Payments() {
@@ -32,11 +35,11 @@ public class Payments {
         this.id = anId;
     }
 
-    public String getName() {
-        return name;
+    public String getEmail() {
+        return email;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
