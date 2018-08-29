@@ -14,15 +14,16 @@
 <div class="row">
     <div class="column" style="background-color:#aaa;">
         <h2>Company</h2>
-     <form>
+
          <h3>
             <a href="/pay-up/company/add"> Add </a>
             <br/>
             <a href="/pay-up/company/remove"> Remove</a>
          </h3>
          <br/>
+     <form >
          <div style="text-align:center"  th:each="company : ${companies}" class="checkbox">
-             <input type="radio" name="companyIds" th:value="${company.id}" th:id="${company.id}"/>
+             <input type="checkbox" name="companyIds"  th:value="${company.id}" th:id="${company.id}"/>
              <label th:for="${company.id}" th:text="${company.name}"></label>
          </div>
      </form>
@@ -30,15 +31,15 @@
     </div>
     <div class="column" style="background-color:#bbb;">
         <h2>Service</h2>
-        <form>
         <h3>
             <a href="/pay-up/service/add"> Add </a>
             <br/>
             <a href="/pay-up/service/remove"> Remove</a>
         </h3>
             <br/>
+        <form >
             <div style="text-align:center" th:each="service : ${services}" class="checkbox">
-                <input type="checkbox" name="serviceIds" th:value="${service.id}" th:id="${service.id}"/>
+                <input type="checkbox" name="serviceIds"  th:value="${service.id}" th:id="${service.id}"/>
                 <label th:for="${service.id}" th:text="${service.job}"></label>
                 <br/>
             </div>
