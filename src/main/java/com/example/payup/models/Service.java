@@ -17,7 +17,7 @@ public class Service {
     private String date;
 
     @NotNull
-    @Size(min = 5, max = 15)
+    @Size(min = 5, max = 50)
     private String job;
 
     @NotNull

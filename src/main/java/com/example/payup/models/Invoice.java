@@ -15,10 +15,10 @@ public class Invoice {
 
     @NotNull
     @Size(min = 1, max = 10000)
-    private int number;
+    private int invoiceId;
 
-    public Invoice(int number) {
-        this.number = number;
+    public Invoice(int invoiceId) {
+        this.invoiceId = invoiceId;
     }
 
     public Invoice() {}
@@ -27,15 +27,15 @@ public class Invoice {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int anId) {
+        this.id = anId;
     }
 
-    public int getNumber() {
-        return number;
+    public int getinvoiceId() {
+        return invoiceId;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setinvoiceId(int invoiceId) {
+        this.invoiceId = invoiceId;
     }
 }
