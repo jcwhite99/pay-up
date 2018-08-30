@@ -17,3 +17,8 @@
     display: table;
     clear: both;
 }
+
+.form-field{
+    vertical-align left;
+}
+

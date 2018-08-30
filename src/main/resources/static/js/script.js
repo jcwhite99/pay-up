@@ -1,11 +1,23 @@
-if (getField("Box1").value=="Yes")
-this.getField("invoice").value = this.getField("Company").value;
-this.getField("invoice").value = this.getField("field1").value;
+function companyInvoice() {
+    var checkBox = document.getElementById("company.id");
+    var text = document.getElementById("company.id");
+    if (checkBox.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    }
+}
 
-if (getField("Box1").value=="Off")
-this.getField("invoice").value = " ";
-this.getField("field2").value = " ";
 
+function Invoice() {
+    var checkBox = document.getElementById("service.id");
+    var text = document.getElementById("service.id");
+    if (checkBox.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    }
+}
 
 
 
