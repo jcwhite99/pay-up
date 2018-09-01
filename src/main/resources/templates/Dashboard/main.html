@@ -21,7 +21,7 @@
          </h3>
          <br/>
      <form>
-         <div  th:each="company : ${companies}" class="checkbox">
+         <div style="margin-left: 30px;"   th:each="company : ${companies}" class="checkbox">
              <input type="checkbox" name="companyIds"  th:value="${company.id}" th:id="${company.id}"/>
              <label th:for="${company.id}" th:text="${company.name}"></label>
          </div>
@@ -37,7 +37,7 @@
         </h3>
             <br/>
         <form >
-            <div  th:each="service : ${services}" class="checkbox">
+            <div style="margin-left: 30px;"  th:each="service : ${services}" class="checkbox">
                 <input type="checkbox" name="serviceIds"  th:value="${service.id}" th:id="${service.id}"/>
                 <label th:for="${service.id}" th:text="${service.job}"></label>
                 <br/>
