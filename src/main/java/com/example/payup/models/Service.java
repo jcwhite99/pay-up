@@ -13,8 +13,8 @@ public class Service {
     @GeneratedValue
     private int id;
 
-    @NotNull
-    private String date;
+    //@NotNull
+   // private String date;
 
     @NotNull
     @Size(min = 5, max = 50)
@@ -24,8 +24,8 @@ public class Service {
     private int price;
 
 
-    public Service(String date, String job, int price) {
-        this.date = date;
+    public Service(String job, int price) {
+        //this.date = date;
         this.job = job;
         this.price = price;
 
@@ -39,13 +39,13 @@ public class Service {
     public void setId(int anId){
         this.id = anId;
     }
-    public String getDate() {
-        return date;
-    }
+   // public String getDate() {
+        //return date;
+    //}
 
-    public void setDate(String date) {
-        this.date = date;
-    }
+    //ublic void setDate(String date) {
+        //this.date = date;
+    //}
 
     public String getJob() {
         return job;
