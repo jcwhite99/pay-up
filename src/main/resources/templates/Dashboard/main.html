@@ -21,8 +21,8 @@
          </h3>
          <br/>
      <form>
-         <div style="margin-left: 30px;"   th:each="company : ${companies}" class="checkbox">
-             <input type="checkbox" name="companyIds"  th:value="${company.id}" th:id="${company.id}"/>
+         <div style="margin-left: 10px;"   th:each="company : ${companies}" class="checkbox">
+             <input type="radio" name="companyIds"  th:value="${company.id}" th:id="${company.id}"/>
              <label th:for="${company.id}" th:text="${company.name}"></label>
          </div>
      </form>
