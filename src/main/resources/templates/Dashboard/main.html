@@ -23,7 +23,7 @@
          <br/>
      <form>
          <div  th:each="company : ${companies}" class="checkbox">
-             <input type="checkbox" name="companyIds"  onclick="myFunction()"  th:value="${company.id}" th:id="${company.id}"/>
+             <input type="checkbox" name="companyIds"  onclick="companyInvoice()"  th:value="${company.id}" th:id="${company.id}"/>
              <label th:for="${company.id}" th:text="${company.name}"></label>
          </div>
      </form>
@@ -39,7 +39,7 @@
             <br/>
         <form >
             <div  th:each="service : ${services}" class="checkbox">
-                <input type="checkbox" name="serviceIds" onclick="myFunction()"  th:value="${service.id}" th:id="${service.id}"/>
+                <input type="checkbox" name="serviceIds" onclick="serviceInvoice()"  th:value="${service.id}" th:id="${service.id}"/>
                 <label th:for="${service.id}" th:text="${service.job}"></label>
                 <br/>
             </div>
@@ -62,7 +62,13 @@
          </style>
               <div style="overflow-x:auto;">
                   <h4>Company: </h4>
-                      <p id="company.id" style="display: none">Hello</p>
+                  <form>
+                      <div  th:each="company : ${companies}" class="checkbox">
+                          <input type="checkbox" name="companyIds"   th:value="${company.id}" th:id="${company.id}"/>
+                          <label th:for="${company.id}" th:text="${company.name}"></label>
+                      </div>
+                  </form>
+
               <table>
                 <tr>
                     <th>Date</th>
@@ -70,6 +76,13 @@
                     <th>Price</th>
                 </tr>
               </table>
+                  <form >
+                      <div  th:each="service : ${services}" class="checkbox">
+                          <input type="checkbox" name="serviceIds"   th:value="${service.id}" th:id="${service.id}"/>
+                          <label th:for="${service.id}" th:text="${service.job}"></label>
+                          <br/>
+                      </div>
+                  </form>
               </div>
               <h5>NET 30 days.  A finance charge of 1.5% will be added to unpaid balances after 30 days.</h5>
               <h5> To pay your bill please click  <a href="/pay-up/payments">HERE</a> to be rerouted to the payment screen.

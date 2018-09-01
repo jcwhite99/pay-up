@@ -9,7 +9,7 @@ function companyInvoice() {
 }
 
 
-function Invoice() {
+function serviceInvoice() {
     var checkBox = document.getElementById("service.id");
     var text = document.getElementById("service.id");
     if (checkBox.checked == true){
