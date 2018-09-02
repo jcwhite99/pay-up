@@ -56,7 +56,7 @@ public class ServiceController {
         for(int serviceId : serviceIds){
             servicedao.delete(serviceId);
         }
-        return "dashboard/main";
+        return "redirect:" + "/pay-up/dashboard";
     }
 }
 

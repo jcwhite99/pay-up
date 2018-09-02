@@ -20,6 +20,7 @@ public class Company {
 
     @NotNull
     @Email
+    @Size(min=5 , max=20)
     private String email;
 
 

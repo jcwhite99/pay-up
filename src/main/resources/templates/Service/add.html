@@ -17,14 +17,6 @@
         <input class="form-control" id="job-field" type="text" name="job" th:value="${job}" th:field="*{job}"/>
     </div>
     <div class="form-group">
-        <style>
-        .currencyInput {
-        border: 1px inset #ccc;
-        }
-        .currencyInput input {
-        border: 0;
-        }
-        </style>
         <label for="price-field">Price:</label>
         <span class="currencyInput">$<input class="form-control" id="price-field" type="number" name="price" min="1" step="any" th:value="${price}" th:field="*{price}"/>
         </span>
