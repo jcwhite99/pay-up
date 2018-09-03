@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-public class Payments {
+public class Payment {
 
     @Id
     @GeneratedValue
@@ -20,11 +20,11 @@ public class Payments {
     @Size(min = 1, max = 30)
     private String email;
 
-    public Payments(String email) {
+    public Payment(String email) {
         this.email = email;
     }
 
-    public Payments() {
+    public Payment() {
     }
 
     public int getId() {

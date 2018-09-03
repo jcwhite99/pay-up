@@ -5,14 +5,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/pay-up/payments")
-public class PaymentsController {
+@RequestMapping("/pay-up/payment")
+public class PaymentController {
 
     @RequestMapping(value = "")
     public String index(Model model) {
 
-        model.addAttribute("title", "Pay-Up! Payments");
-        return "home/payments";
+        model.addAttribute("title", "Pay-Up! Payment");
+        return "home/payment";
 
     }
 }

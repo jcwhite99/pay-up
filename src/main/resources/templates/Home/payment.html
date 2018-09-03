@@ -2,13 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 <body class="container">
-<h1 th:text="${title}">Pay-Up! Payments</h1>
+<h1 th:text="${title}">Pay-Up! Payment</h1>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
 <h3>Welcome to the payments page.  Please enter your company email below and click on the invoices tab to see a list of your invoices.
     Please select the invoice you would like to pay and use the PayPal button below to submit payment</h3>
 
-<form method="post" th:action="@{/pay-up/payments}" style="width:600px;"> <!--th:object="${Payments}">-->
+<form method="post" th:action="@{/pay-up/payment}" style="width:600px;"> <!--th:object="${Payment}">-->
     <div class="form-group">
         <label for="email-field"> Company Email:</label>
         <input class="form-control" id= "email-field" type="email" name="email" th:value="${email}"/> <!--th:field="*{money}" />-->
