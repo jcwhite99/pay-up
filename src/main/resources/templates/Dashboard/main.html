@@ -8,7 +8,7 @@
 
 <link rel="stylesheet" th:href="@{/css/dashboard.css}"/>
 
-<script type="text/javascript" src="/js/script.js"></script>
+<script type="text/javascript" th:src="@{/js/script.js}"></script>
 
 <h2>Select a company and services to create an invoice.</h2>
 
@@ -24,7 +24,7 @@
          <br/>
      <form>
          <div style="margin-left: 30px;"   th:each="company : ${companies}" class="radio">
-             <input type="radio" name="companyIds" onclick="companyInvoice()"  th:value="${company.id}" th:id="${company.id}"/>
+             <input type="radio" name="companyIds" id="company" onclick="companyInvoice()"  th:value="${company.id}" th:id="${company.id}"/>
              <label th:for="${company.id}" th:text="${company.name}"></label>
          </div>
      </form>
@@ -40,7 +40,7 @@
             <br/>
         <form >
             <div style="margin-left: 30px;"  th:each="service : ${services}" class="checkbox">
-                <input type="checkbox" name="serviceIds" onclick="companyInvoice()" th:value="${service.id}" th:id="${service.id}"/>
+                <input type="checkbox" name="serviceIds" id="service" onclick="serviceInvoice()" th:value="${service.id}" th:id="${service.id}"/>
                 <label th:for="${service.id}" th:text="${service.job}"></label>
                 <br/>
             </div>
@@ -61,8 +61,10 @@
               border-bottom: 1px solid #ddd;
             }
          </style>
+
+
               <div style="overflow-x:auto;">
-                  <h4>Company: <p id="text" style="display:none">Need to pull this from the database!</p></h4>
+                  <h4>Company: <p id="name" style="display:none">Need to pull this from the database!</p></h4>
                <table>
                 <tr>
                     <th>Date</th>
@@ -70,9 +72,9 @@
                     <th>Price</th>
                 </tr>
                 <tr>
-                    <td>
-                        <input type="date" />
-                    </td>
+                    <td><input type="date"/></td>
+                    <td><p id="job" style="display:none">Need to pull this from the database!</p></td>
+
                 </tr>
               </table>
 
