@@ -1,31 +1,13 @@
-window.onload=function companyInvoice(){
-    var radio = document.getElementById("company");
-    var text = document.getElementById("name");
-   if (radio.checked == true){
-       text.style.display = "block";
-    } else {
-       text.style.display = "none";   }
+function allowDrop(ev) {
+    ev.preventDefault();
 }
 
-
-window.onload=function serviceInvoice() {
-    var checkBox = document.getElementById("service");
-    var text = document.getElementById("job")
-    if (checkBox.checked == true){
-        text.style.display = "block";
-    } else {
-        text.style.display = "none";
-    }
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
 }
 
-
-
-//function hello(){
-//var x = document.getElementsByClassName("serviceOne")
-//console.log("x", x)
-//window.alert("hi");
-//};
-
-
-
-
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
