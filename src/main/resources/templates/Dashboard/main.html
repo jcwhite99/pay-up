@@ -8,7 +8,7 @@
 
 <link rel="stylesheet" th:href="@{/css/dashboard.css}"/>
 
-<script type="text/javascript" th:src="@{/js/script.js}"></script>
+<!--<script th:inline="javascript"  th:src="@{~/js/script.js}"></script>-->
 
 <h2>Select a company and services to create an invoice.</h2>
 
@@ -27,6 +27,9 @@
              <input type="radio" name="companyIds" id="company" onclick="companyInvoice()"  th:value="${company.id}" th:id="${company.id}"/>
              <label th:for="${company.id}" th:text="${company.name}"></label>
          </div>
+         <div>
+             <input type="submit" value="submit"/>
+         </div>
      </form>
 
     </div>
@@ -38,12 +41,14 @@
             <a href="/pay-up/service/remove"> Remove</a>
         </h3>
             <br/>
-        <form >
-            <div style="margin-left: 30px;"  th:each="service : ${services}" class="checkbox">
+        <form>
+              <div style="margin-left: 30px;"  th:each="service : ${services}" class="service">
                 <input type="checkbox" name="serviceIds" id="service" onclick="serviceInvoice()" th:value="${service.id}" th:id="${service.id}"/>
                 <label th:for="${service.id}" th:text="${service.job}"></label>
-                <br/>
-            </div>
+              </div>
+        <div>
+            <input type="submit" value="submit"/>
+        </div>
         </form>
     </div>
     <div class="column" style="background-color:#ccc;">
@@ -62,19 +67,18 @@
             }
          </style>
 
-
               <div style="overflow-x:auto;">
-                  <h4>Company: <p id="name" style="display:none">Need to pull this from the database!</p></h4>
+                  <h4>Company:</h4>
                <table>
                 <tr>
                     <th>Date</th>
-                    <th>Service/Description</th>
+                    <th>Service</th>
                     <th>Price</th>
                 </tr>
                 <tr>
                     <td><input type="date"/></td>
-                    <td><p id="job" style="display:none">Need to pull this from the database!</p></td>
-
+                    <td></td>
+                    <td><input type="number"/></td>
                 </tr>
               </table>
 
@@ -94,6 +98,6 @@
 
 </div>
 
-
+<script th:inline="javascript"  th:src="@{~/js/script.js}"></script>
 </body>
 </html>

@@ -31,6 +31,7 @@ public class CompanyController {
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public String processAddCompanyForm(@ModelAttribute @Valid Company newCompany,
                                         Errors errors, Model model) {
+        model.addAttribute("company","newcompany");
         if (errors.hasErrors()) {
             model.addAttribute("title", "Add Company");
             model.addAttribute("company", newCompany);
