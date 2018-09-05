@@ -54,6 +54,7 @@
     <div class="column" style="background-color:#ccc;">
         <h2>Invoice</h2>
           <form method="post">
+
          <style>
               table {
               border-collapse: collapse;
@@ -69,19 +70,52 @@
               <style>
               #div1 {
               width: 150px;
-              height: 200px;
+              height: 40px;
               padding: 10px;
               border: 2px solid #000;
 }
            </style>
               <style>
-              #div2 {
-              width: 200px;
+              #div2{
+              width: 150px;
+              height: 40px;
+              padding: 10px;
+              border: 2px solid #000;
+}
+           </style>
+              <style>
+              #div3 {
+              width: 150px;
+              height: 40px;
+              padding: 10px;
+              border: 2px solid #000;
+}
+           </style>
+              <style>
+              #div4 {
+              width: 150px;
               height: 40px;
               padding: 10px;
               border: 2px solid #000;
 }
 </style>
+              <style>
+              #div5 {
+              width: 150px;
+              height: 40px;
+              padding: 10px;
+              border: 2px solid #000;
+}
+</style>
+              <style>
+              #div6{
+              width: 150px;
+              height: 40px;
+              padding: 10px;
+              border: 2px solid #000;
+}
+</style>
+
 
               <div style="overflow-x:auto;">
                   <h4>Company:</h4><div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -96,7 +130,32 @@
                     <td><div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
                     <td><input type="number"/></td>
                 </tr>
-              </table>
+                 <tr>
+                    <td><input type="date"/></td>
+                    <td><div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+                    <td><input type="number"/></td>
+                 </tr>
+                   <tr>
+                       <td><input type="date"/></td>
+                       <td><div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+                       <td><input type="number"/></td>
+                   </tr>
+                   <tr>
+                       <td><input type="date"/></td>
+                       <td><div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+                       <td><input type="number"/></td>
+                   </tr>
+                   <!--<tr>
+                       <td><input type="date"/></td>
+                       <td><div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+                       <td><input type="number"/></td>
+                   </tr>
+                   <tr>
+                       <td><input type="date"/></td>
+                       <td><div id="div7" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+                       <td><input type="number"/></td>
+                   </tr>-->
+               </table>
 
               </div>
               <h5>NET 30 days.  A finance charge of 1.5% will be added to unpaid balances after 30 days.</h5>
