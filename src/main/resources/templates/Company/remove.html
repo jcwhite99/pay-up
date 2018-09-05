@@ -9,13 +9,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
 <form method="post" th:action="@{/pay-up/company/remove}" style="width:600px;" th:object="${company}">
-
     <div style="margin-left: 30px;"  th:each="company : ${companies}" class="checkbox">
         <input type="checkbox" name="companyIds" th:value="${company.id}" th:id="${company.id}"/>
         <label th:for="${company.id}" th:text="${company.name}"></label>
         <br/>
     </div>
-
     <input type="submit" value="Remove Company"/>
 </form>
 
