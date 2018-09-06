@@ -16,6 +16,7 @@ function drop(ev) {
 function calculate(){
     var field1=document.getElementById("$1").value;
     var field2=document.getElementById("$2").value;
+    var field3=document.getElementById("$3").value
 
 
     var result=parseFloat(field1)+parseFloat(field2);
