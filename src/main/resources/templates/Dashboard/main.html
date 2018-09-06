@@ -1,365 +1,155 @@
 <!DOCTYPE html>
 
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-
 <head th:replace="fragments :: head"></head>
-
 <body class="container">
 
 <h1 th:text="${title}">Dashboard</h1>
 
-
-
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
-
 
 <link rel="stylesheet" th:href="@{/css/dashboard.css}"/>
 
-
-
-<!--<script th:inline="javascript"  th:src="@{~/js/script.js}"></script>-->
-
-
-
 <h2>Drag and drop a company and services to create an invoice.</h2>
-
-
 
 <div class="row">
 
     <div class="column" style="background-color:#aaa;">
-
         <h2>Company</h2>
-
-
-
         <h3>
-
             <a href="/pay-up/company/add"> Add </a>
-
             <br/>
-
             <a href="/pay-up/company/remove"> Remove</a>
-
         </h3>
-
         <br/>
-
         <form>
-
             <div style="margin-left: 30px;"   th:each="company : ${companies}">
-
-                <!--<input type="radio" name="companyIds" id="company" onclick="companyInvoice()"  th:value="${company.id}" th:id="${company.id}"/>-->
-
                 <label draggable="true" ondragstart="drag(event)" id="drag2" th:for="${company.id}" th:text="${company.name}"></label>
-
             </div>
-
-            <div>
-
-                <!--<input type="submit" value="submit"/>-->
-
-            </div>
-
         </form>
-
-
-
     </div>
 
     <div class="column" style="background-color:#bbb;">
-
         <h2>Service</h2>
-
         <h3>
-
             <a href="/pay-up/service/add"> Add </a>
-
             <br/>
-
             <a href="/pay-up/service/remove"> Remove</a>
-
         </h3>
-
         <br/>
-
         <form>
-
             <div style="margin-left: 30px;"  th:each="service : ${services}">
-
-                <!--<input type="checkbox" name="serviceIds" id="service" onclick="serviceInvoice()" th:value="${service.id}" th:id="${service.id}"/>-->
-
                 <label draggable="true" ondragstart="drag(event)" id="drag1" th:for="${service.id}" th:text="${service.job}" ></label>
-
             </div>
-
-            <div>
-
-                <!--<input type="submit" value="submit"/>-->
-
-            </div>
-
         </form>
-
     </div>
-
     <div class="column" style="background-color:#ccc;">
-
         <h2>Invoice</h2>
-
         <form method="post">
-
             <style>
+            table {
+            border-collapse: collapse;
+            width: 100%;
+}
 
-              table {
-
-              border-collapse: collapse;
-
-              width: 100%;
-
-            }
-
-
-
-              th, td {
-
-              padding: 8px;
-
-              text-align: left;
-
-              border-bottom: 1px solid #ddd;
-
-            }
-
-         </style>
-
-            <style>
-
-              #div1 {
-
-              width: 150px;
-
-              height: 40px;
-
-              padding: 10px;
-
-
+            th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
 
 }
 
            </style>
 
             <style>
-
-              #div2{
-
-              width: 150px;
-
-              height: 40px;
-
-              padding: 10px;
-
-
-
+            #div1 {
+            width: 150px;
+            height: 40px;
+            padding: 10px;
 }
 
            </style>
-
             <style>
-
-              #div3 {
-
-              width: 150px;
-
-              height: 40px;
-
-              padding: 10px;
-
-
-
+            #div2{
+            width: 150px;
+            height: 40px;
+            padding: 10px;
 }
-
            </style>
-
             <style>
-
-              #div4 {
-
-              width: 150px;
-
-              height: 40px;
-
-              padding: 10px;
-
-
-
+           #div3 {
+           width: 150px;
+           height: 40px;
+           padding: 10px;
 }
-
-</style>
-
-            <style>
-
-              #div5 {
-
-              width: 150px;
-
-              height: 40px;
-
-              padding: 10px;
-
-
-
+           </style>
+           <style>
+           #div4 {
+           width: 150px;
+           height: 40px
+           padding: 10px;
+           }
+           </style>
+           <style>
+           #div5 {
+           width: 150px;
+           height: 40px;
+           padding: 10px;
 }
-
-</style>
-
-            <style>
-
-              #div6{
-
-              width: 150px;
-
-              height: 40px;
-
-              padding: 10px;
-
-
-
+           </style>
+           <style>
+           #div6{
+           width: 150px;
+           height: 40px;
+           padding: 10px;
 }
-
-</style>
-
-
-
-
+           </style>
 
             <div style="overflow-x:auto;" >
-                <!--<div style="overflow-y: auto; height:150px;"></div>-->
-
-                <h4>Company:<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></h4>
-
-                <table id="invoice">
-
+                <h4>Company:</h4><div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <table>
                     <tr>
-
                         <th>Date</th>
-
                         <th>Service</th>
-
                         <th>Price</th>
-
                     </tr>
-
                     <tr>
-
                         <td><input type="date"/></td>
-
                         <td><div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
-
                         <td><input type="text" id="value1" name="value1" value=" "/></td>
-
-                        <td><input type="button" value="Delete" onclick="javascript : deleteRow(this)"/></td>
-
                     </tr>
-
                     <tr>
-
                         <td><input type="date"/></td>
-
                         <td><div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
-
                         <td><input type="text" id="value2" name="value2" value=" "/></td>
-
-                        <td><input type="button" value="Delete" onclick="javascript : deleteRow(this)"/></td>
-
                     </tr>
-
                     <tr>
-
                         <td><input type="date"/></td>
-
                         <td><div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
-
                         <td><input type="text" id="value3" name="value3" value=" "/></td>
-
-                        <td><input type="button" value="Delete" onclick="javascript : deleteRow(this)"/></td>
-
                     </tr>
-
-                    <!--<tr>
-
-                        <td><input type="date"/></td>
-
-                        <td><div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
-
-                        <td>$<input type="text" id="$4"/></td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td><input type="date"/></td>
-
-                        <td><div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
-
-                        <td><input type="number"/></td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td><input type="date"/></td>
-
-                        <td><div id="div7" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
-
-                        <td><input type="number"/></td>
-
-                    </tr>-->
-
                 </table>
             </div>
 
-                <input type="button" name="Submit" value="Please Pay This Amount $" onclick="javascript : calculate()"/>
-                <input type="text" id="answer" name="answer" value=""/>
-                <input type="button" value="Add New Row" onclick="javascript : Add Row()"/>
-
-
-
-
+            <input type="button" name="Submit" value="Total" onclick="javascript : calculate()"/>
+            <input type="text" id="answer" name="answer" value=""/>
 
             <h5>NET 30 days.  A finance charge of 1.5% will be added to unpaid balances after 30 days.</h5>
-
             <h5> To pay your bill please click  <a href="/pay-up/payment">HERE</a> to be rerouted to the payment screen.
-
                 You may also view your past and present invoices here as well.</h5>
-
             <br/>
-
             <div>
-
                 <input type="submit" value="Submit"/>
-
                 <input type="reset" value="Reset"/>
-
                 <input type="submit" value="Save"/>
-
                 <input type="submit" value="Search"/>
-
             </div>
-
         </form>
-
     </div>
 
-
-
 </div>
-
-
 
 <script th:inline="javascript"  th:src="@{~/js/script.js}"></script>
 
 </body>
-
 </html>
