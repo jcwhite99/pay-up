@@ -22,7 +22,7 @@
 
 
 
-<h2>Select a company and services to create an invoice.</h2>
+<h2>Drag and drop a company and services to create an invoice.</h2>
 
 
 
@@ -258,7 +258,7 @@
 
                         <td><div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
 
-                        <td><input type="number"/></td>
+                        <td>$<input type="text" id="$1"/></td>
 
                     </tr>
 
@@ -268,17 +268,17 @@
 
                         <td><div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
 
-                        <td><input type="number"/></td>
+                        <td>$<input type="text" id="$2"/></td>
 
                     </tr>
 
-                    <tr>
+                    <!--<tr>
 
                         <td><input type="date"/></td>
 
                         <td><div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
 
-                        <td><input type="number"/></td>
+                        <td>$<input type="text" id="$3"/></td>
 
                     </tr>
 
@@ -288,11 +288,11 @@
 
                         <td><div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
 
-                        <td><input type="number"/></td>
+                        <td>$<input type="text" id="$4"/></td>
 
                     </tr>
 
-                    <!--<tr>
+                    <tr>
 
                         <td><input type="date"/></td>
 
@@ -313,10 +313,15 @@
                     </tr>-->
 
                 </table>
-
-
-
             </div>
+
+                <button onclick="calculate()">Total</button>
+                <h6 id="total"></h6>
+
+
+
+
+
 
             <h5>NET 30 days.  A finance charge of 1.5% will be added to unpaid balances after 30 days.</h5>
 
