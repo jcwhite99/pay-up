@@ -110,8 +110,6 @@
 
         <form method="post">
 
-
-
             <style>
 
               table {
@@ -239,9 +237,9 @@
             <div style="overflow-x:auto;" >
                 <!--<div style="overflow-y: auto; height:150px;"></div>-->
 
-                <h4>Company:</h4><div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <h4>Company:<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></h4>
 
-                <table>
+                <table id="invoice">
 
                     <tr>
 
@@ -261,6 +259,8 @@
 
                         <td><input type="text" id="value1" name="value1" value=" "/></td>
 
+                        <td><input type="button" value="Delete" onclick="javascript : deleteRow(this)"/></td>
+
                     </tr>
 
                     <tr>
@@ -271,6 +271,8 @@
 
                         <td><input type="text" id="value2" name="value2" value=" "/></td>
 
+                        <td><input type="button" value="Delete" onclick="javascript : deleteRow(this)"/></td>
+
                     </tr>
 
                     <tr>
@@ -280,6 +282,8 @@
                         <td><div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
 
                         <td><input type="text" id="value3" name="value3" value=" "/></td>
+
+                        <td><input type="button" value="Delete" onclick="javascript : deleteRow(this)"/></td>
 
                     </tr>
 
@@ -316,9 +320,9 @@
                 </table>
             </div>
 
-                <input type="button" name="Submit" value="Total" onclick="javascript : calculate()"/>
+                <input type="button" name="Submit" value="Please Pay This Amount $" onclick="javascript : calculate()"/>
                 <input type="text" id="answer" name="answer" value=""/>
-
+                <input type="button" value="Add New Row" onclick="javascript : Add Row()"/>
 
 
 

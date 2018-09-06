@@ -20,6 +20,23 @@ function calculate(){
     var ansD=document.getElementById('answer');
 
     ansD.value = val1 + val2 + val3;
+
+}
+
+
+function myFunction() {
+    var table = document.getElementById("invoice");
+    var row = table.insertRow(0);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+
+}
+
+
+function deleteRow(r) {
+    var i = r.parentNode.parentNode.rowIndex;
+    document.getElementById("invoice").deleteRow(i);
 }
 
 
