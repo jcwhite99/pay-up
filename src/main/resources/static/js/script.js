@@ -14,14 +14,13 @@ function drop(ev) {
 
 
 function calculate(){
-    var field1=document.getElementById("$1").value;
-    var field2=document.getElementById("$2").value;
-    var field3=document.getElementById("$3").value
+    var val1=parseInt(document.getElementById("value1").value);
+    var val2=parseInt(document.getElementById("value2").value);
+    var val3=parseInt(document.getElementById("value3").value);
+    var ansD=document.getElementById('answer');
+
+    ansD.value = val1 + val2 + val3;
+}
 
 
-    var result=parseFloat(field1)+parseFloat(field2);
 
-    if (!isNaN(result)){
-    }
-    document.getElementById("total").innerHTML="Please pay this amount"+result;
-    }

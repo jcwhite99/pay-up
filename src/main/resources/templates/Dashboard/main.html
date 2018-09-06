@@ -259,7 +259,7 @@
 
                         <td><div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
 
-                        <td>$<input type="text" id="$1"/></td>
+                        <td><input type="text" id="value1" name="value1" value=" "/></td>
 
                     </tr>
 
@@ -269,7 +269,7 @@
 
                         <td><div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
 
-                        <td>$<input type="text" id="$2"/></td>
+                        <td><input type="text" id="value2" name="value2" value=" "/></td>
 
                     </tr>
 
@@ -279,7 +279,7 @@
 
                         <td><div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
 
-                        <td>$<input type="text" id="$3"/></td>
+                        <td><input type="text" id="value3" name="value3" value=" "/></td>
 
                     </tr>
 
@@ -316,8 +316,8 @@
                 </table>
             </div>
 
-                <button onclick="calculate()">Total</button>
-                <input type="text" id="total"/>
+                <input type="button" name="Submit" value="Total" onclick="javascript : calculate()"/>
+                <input type="text" id="answer" name="answer" value=""/>
 
 
 
