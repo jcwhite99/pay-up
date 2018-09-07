@@ -3,7 +3,7 @@ function allowDrop(ev) {
 }
 
 function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
+   ev.dataTransfer.setData("text", ev.target.id);
 }
 
 function drop(ev) {
@@ -18,5 +18,6 @@ function calculate(){
     var val3=parseInt(document.getElementById("value3").value);
     var ansD=document.getElementById('answer');
 
-    ansD.value = val1 + val2 + val3;
+ansD.value = val1 + val2 + val3;
+
 }
