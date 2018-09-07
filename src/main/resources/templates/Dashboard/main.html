@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 <body class="container">
-
 <h1 th:text="${title}">Dashboard</h1>
-
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
 <link rel="stylesheet" th:href="@{/css/dashboard.css}"/>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
 <h2>Drag and drop a company and services to create an invoice.</h2>
 
@@ -27,7 +24,7 @@
         </h3>
         <br/>
         <form>
-            <div style="margin-left: 30px;"   th:each="company : ${companies}">
+            <div style="margin-left: 3px;"   th:each="company : ${companies}">
                 <label class="dragMe"   th:for="${company.id}" th:text="${company.name}"></label>
             </div>
         </form>
@@ -42,61 +39,55 @@
         </h3>
         <br/>
         <form>
-            <div style="margin-left: 30px;"  th:each="service : ${services}">
+            <div style="margin-left: 3px;"  th:each="service : ${services}">
                 <label class="dragMe"   th:for="${service.id}" th:text="${service.job}" ></label>
             </div>
         </form>
     </div>
+
     <div class="column" style="background-color:#ccc;">
         <h2>Invoice</h2>
         <form method="post">
             <style>
-            table {
-            border-collapse: collapse;
-            width: 100%;
-}
+                table {
+                border-collapse: collapse;
+                width: 100%;
+                }
 
-            th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
+                th, td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
             </style>
 
             <style>
-            .dragMe {
-            cursor: move;
-            }
+             .dragMe {
+              cursor: move;
+              }
             </style>
-
-            <script>
-
-
-            </script>
 
             <h4>Company:</h4><div  ondrop="drop(event)" ondragover="allowDrop(event)"></div>
             <table id="dataTable" style="width:200px"   border="0">
-            <tr>
-                <th>Delete</th>
-                <th>Date</th>
-                <th>Service</th>
-                <th>Price</th>
-            </tr>
-            <tr>
-                <td><input type="checkbox"/></td>
-                <td> <input type="date" /> </td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-            </tr>
+                <tr>
+                    <th>Delete</th>
+                    <th>Date</th>
+                    <th>Service</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"/></td>
+                    <td> <input type="date" /> </td>
+                    <td><input type="text"/></td>
+                    <td><input type="text"/></td>
+                </tr>
             </table>
-
-
+            <br/>
             <input type="button" name="Submit" value="Total" onclick="javascript : calculate()"/>
             <input type="text" id="answer" name="answer" value=""/>
+            <br/>
+            <br/>
             <input type="button" value="Add Row" onclick="addRow('dataTable')" />
-
             <input type="button" value="Delete Row" onclick="deleteRow('dataTable')" />
-
-            <div style="overflow-x:auto;" />
 
             <h5>NET 30 days.  A finance charge of 1.5% will be added to unpaid balances after 30 days.</h5>
             <h5> To pay your bill please click  <a href="/pay-up/payment">HERE</a> to be rerouted to the payment screen.
@@ -110,7 +101,6 @@
             </div>
         </form>
     </div>
-
 </div>
 
 <script th:inline="javascript"  th:src="@{~/js/script.js}"></script>
