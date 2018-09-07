@@ -66,8 +66,8 @@
               }
             </style>
 
-            <h4>Company:</h4><div  ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <table id="dataTable" style="width:200px"   border="0">
+            <h4>Company:<div ondrop="drop(event)" ondragover="allowDrop(event)"></div></h4>
+            <table id="dataTable" border="0">
                 <tr>
                     <th>Delete</th>
                     <th>Date</th>
@@ -76,14 +76,14 @@
                 </tr>
                 <tr>
                     <td><input type="checkbox"/></td>
-                    <td> <input type="date" /> </td>
+                    <td><input type="date"/> </td>
                     <td><input type="text"/></td>
                     <td><input type="text"/></td>
                 </tr>
             </table>
             <br/>
             <input type="button" name="Submit" value="Total" onclick="javascript : calculate()"/>
-            <input type="text" id="answer" name="answer" value=""/>
+            <input type="text" id="sum" name="sum" value=" "/>
             <br/>
             <br/>
             <input type="button" value="Add Row" onclick="addRow('dataTable')" />

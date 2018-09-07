@@ -62,20 +62,14 @@ for(var i=0; i<rowCount; i++) {
     }
 }
 
-function add() {
+function Calculate() {
+    var table = document.getElementById("dataTable");
+    var items = table.getElementsByTagName("input");
     var sum = 0;
-    var valid = true;
-    var inputs = document.getElementsByName( 'text');
-for(i =0; i < inputs.length; i++) {
-    if( inputs[i].value.match( /^[0]*(\d+)$/)) {
-       sum += parseInt(RegExp.$1);
-
-   }
-else {valid=false;}
-}
-if(valid) {
-document.getElementById( 'sum').value = sum;
-}
+    for(var i=0; i<items.length; i++)
+        sum += parseInt(items[i].value);
+    var output = document.getElementById("sum");
+    output.innerHTML = sum;
 }
 
 var dragMe = document.getElementsByClassName("dragMe");
