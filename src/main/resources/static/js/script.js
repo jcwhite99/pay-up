@@ -62,23 +62,22 @@ for(var i=0; i<rowCount; i++) {
     }
 }
 
-function calculate() {
-    var table = document.getElementById("dataTable");
-    var numbers = table.getElementById("price");
-    var sum = 0;
-    for(var i=0; i<numbers.length; i++) {
-        sum += parseInt(numbers[i].value);
-    }
-    var output = document.getElementById("sum");
-    output.innerHTML = sum;
-}
 
 var dragMe = document.getElementsByClassName("dragMe");
     for (var i = 0; i < dragMe.length; i++) {
         $(dragMe[i]).draggable();
     }
 
+$(document).on("change", ".qty1", function() {
+    var sum = 0;
+    $(".qty1").each(function(){
+        sum += +$(this).val();
+    });
+    $(".total").val(sum);
+});
 
+
+$("#element").priceFormat();
 
 
 

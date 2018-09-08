@@ -19,8 +19,6 @@ public class Service {
 
     public Service(String job) {
         this.job = job;
-
-
     }
 
     public Service() {
@@ -31,15 +29,10 @@ public class Service {
     public void setId(int anId){
         this.id = anId;
     }
-
-
     public String getJob() {
         return job;
     }
-
     public void setJob(String job) {
         this.job = job;
     }
-
 }
-

@@ -25,7 +25,6 @@ public class ServiceController {
         model.addAttribute("title", "Add Service");
         model.addAttribute(new Service());
         return "service/add";
-
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
@@ -36,7 +35,6 @@ public class ServiceController {
             model.addAttribute("title", "Add Service");
             model.addAttribute("service", newService);
             return "redirect:/service/add";
-
         }
 
         servicedao.save(newService);
@@ -56,7 +54,11 @@ public class ServiceController {
         for(int serviceId : serviceIds){
             servicedao.delete(serviceId);
         }
+
         return "redirect:" + "/pay-up/dashboard";
+
     }
+
 }
+
 

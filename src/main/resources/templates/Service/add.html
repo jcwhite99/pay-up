@@ -6,13 +6,11 @@
 <nav th:replace="fragments :: navigation"></nav>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-
 <form method="post" th:action="@{/pay-up/service/add}" style="width:600px;" th:object="${service}">
     <div class="form-group">
         <label for="job-field">Service:</label>
         <input class="form-control" id="job-field" type="text" name="job" th:value="${job}" th:field="*{job}"/>
     </div>
-
 
     <input type="submit" value="Add Service"/>
 </form>
@@ -20,4 +18,5 @@
 <span class="error" th:text="${message}"></span>
 
 </body>
+
 </html>
