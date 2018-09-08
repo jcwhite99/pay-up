@@ -25,7 +25,7 @@
         <br/>
         <form>
             <div style="margin-left: 3px;"   th:each="company : ${companies}">
-                <label class="dragMe"   th:for="${company.id}" th:text="${company.name}"></label>
+                <label class="dragMe" th:for="${company.id}" th:text="${company.name}"></label>
             </div>
         </form>
     </div>
@@ -40,7 +40,7 @@
         <br/>
         <form>
             <div style="margin-left: 3px;"  th:each="service : ${services}">
-                <label class="dragMe"   th:for="${service.id}" th:text="${service.job}" ></label>
+                <label class="dragMe" th:for="${service.id}" th:text="${service.job}"></label>
             </div>
         </form>
     </div>
@@ -78,7 +78,7 @@
                     <td><input type="checkbox"/></td>
                     <td><input type="date"/> </td>
                     <td><input type="text"/></td>
-                    <td><input type="text"/></td>
+                    <td><input  id="price" type="text"/></td>
                 </tr>
             </table>
             <br/>

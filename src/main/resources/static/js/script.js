@@ -62,12 +62,13 @@ for(var i=0; i<rowCount; i++) {
     }
 }
 
-function Calculate() {
+function calculate() {
     var table = document.getElementById("dataTable");
-    var items = table.getElementsByTagName("input");
+    var numbers = table.getElementById("price");
     var sum = 0;
-    for(var i=0; i<items.length; i++)
-        sum += parseInt(items[i].value);
+    for(var i=0; i<numbers.length; i++) {
+        sum += parseInt(numbers[i].value);
+    }
     var output = document.getElementById("sum");
     output.innerHTML = sum;
 }
