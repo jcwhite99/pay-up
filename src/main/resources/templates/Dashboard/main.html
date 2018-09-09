@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head th:replace="fragments :: head"></head>
-<body class="container">
+<thead th:replace="fragments :: head"></thead>
+<tbody class="container">
 <h1 th:text="${title}">Dashboard</h1>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
@@ -78,12 +78,12 @@
                     <td><input type="checkbox"/></td>
                     <td><input type="date"/> </td>
                     <td><input type="text"/></td>
-                    <td><input  type="text" class="qty1" value=" "/></td>
+                    <td><input type="text" class="num1" value=" "/></td>
                 </tr>
             </table>
             <br/>
             <input type="button" name="Submit" value="Total"/>
-            <input type="text" class="total" value=" " id="element" name="element"/>
+            <input type="text" class="total" value=" "/>
             <br/>
             <br/>
             <input type="button" value="Add Row" onclick="addRow('dataTable')" />
@@ -105,5 +105,5 @@
 
 <script th:inline="javascript"  th:src="@{~/js/script.js}"></script>
 
-</body>
+</tbody>
 </html>

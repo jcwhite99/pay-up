@@ -68,22 +68,15 @@ var dragMe = document.getElementsByClassName("dragMe");
         $(dragMe[i]).draggable();
     }
 
-$(document).on("change", ".qty1", function() {
+
+$(document).on("change", ".num1 ", function() {
     var sum = 0;
-    $(".qty1").each(function(){
+    $(".num1").each(function(){
         sum += +$(this).val();
     });
     $(".total").val(sum);
+    "$" + sum.toFixed(2)
 });
-
-
-$("#element").priceFormat();
-
-
-
-
-
-
 
 
 
