@@ -2,7 +2,6 @@
     box-sizing: border-box;
 }
 
-
 .column {
     float: left;
     width: 33.33%;
@@ -10,14 +9,11 @@
     height: 600px;
 }
 
-
 .row:after {
     content: "";
     display: table;
     clear: both;
 }
-
-
 
 
 
