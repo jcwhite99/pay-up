@@ -69,14 +69,16 @@ var dragMe = document.getElementsByClassName("dragMe");
     }
 
 
-$(document).on("change", ".num1 ", function() {
+$(document).on("change", ".num", function() {
     var sum = 0;
-    $(".num1").each(function(){
+    $(".num").each(function(){
         sum += +$(this).val();
     });
     $(".total").val(sum);
     "$" + sum.toFixed(2)
 });
+
+
 
 
 

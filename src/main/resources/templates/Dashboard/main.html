@@ -17,11 +17,11 @@
 
     <div class="column" style="background-color:#aaa;">
         <h2>Company</h2>
-        <h3>
-            <a href="/pay-up/company/add"> Add </a>
-            <br/>
-            <a href="/pay-up/company/remove"> Remove</a>
-        </h3>
+            <h3>
+                <a href="/pay-up/company/add"> Add </a>
+                <br/>
+                <a href="/pay-up/company/remove"> Remove</a>
+            </h3>
         <br/>
         <form>
             <div style="margin-left: 3px;"   th:each="company : ${companies}">
@@ -32,12 +32,12 @@
 
     <div class="column" style="background-color:#bbb;">
         <h2>Service</h2>
-        <h3>
-            <a href="/pay-up/service/add"> Add </a>
+            <h3>
+                <a href="/pay-up/service/add"> Add </a>
+                <br/>
+                <a href="/pay-up/service/remove"> Remove</a>
+            </h3>
             <br/>
-            <a href="/pay-up/service/remove"> Remove</a>
-        </h3>
-        <br/>
         <form>
             <div style="margin-left: 3px;"  th:each="service : ${services}">
                 <label class="dragMe" th:for="${service.id}" th:text="${service.job}"></label>
@@ -78,7 +78,7 @@
                     <td><input type="checkbox"/></td>
                     <td><input type="date"/> </td>
                     <td><input type="text"/></td>
-                    <td><input type="text" class="num1" value=" "/></td>
+                    <td><input type="text" class="num" value=" "/></td>
                 </tr>
             </table>
             <br/>

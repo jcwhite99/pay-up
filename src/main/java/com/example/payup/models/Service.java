@@ -14,7 +14,7 @@ public class Service {
     private int id;
 
     @NotNull
-    @Size(min = 5, max = 50)
+    @Size(min = 1, max = 50)
     private String job;
 
     public Service(String job) {
