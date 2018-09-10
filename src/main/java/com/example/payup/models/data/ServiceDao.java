@@ -10,5 +10,3 @@ import javax.transaction.Transactional;
 public interface ServiceDao extends CrudRepository<Service, Integer > {
 }
 
-
-
