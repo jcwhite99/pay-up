@@ -39,6 +39,7 @@ function addRow(tableID) {
     var element4 = document.createElement("input");
         element4.type = "text";
         element4.name = "txtbox1[]";
+        element4.classList.add("num");
         cell4.appendChild(element4);
 }
 
@@ -72,6 +73,7 @@ var dragMe = document.getElementsByClassName("dragMe");
 $(document).on("change", ".num", function() {
     var sum = 0;
     $(".num").each(function(){
+    console.log("ran");
         sum += +$(this).val();
     });
     $(".total").val(sum);

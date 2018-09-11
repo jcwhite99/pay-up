@@ -5,13 +5,18 @@
 <h1 th:text="${title}">Pay-Up! Payment</h1>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<h3>Welcome to the payments page.  Please enter your company email below and click on the invoices tab to see a list of your invoices.
-    Please select the invoice you would like to pay and use the PayPal button below to submit payment</h3>
+<h3>Welcome to the payments page.  Please enter your company email and password below to be redirected to the invoice page where you
+    can view past and present invoices.  To make a payment, please click the PayPal button below.</h3>
 
 <form method="post" th:action="@{/pay-up/payment}" style="width:600px;"> <!--th:object="${Payment}">-->
     <div class="form-group">
         <label for="email-field"> Company Email:</label>
         <input class="form-control" id= "email-field" type="email" name="email" th:value="${email}"/> <!--th:field="*{money}" />-->
+    </div>
+    <br/>
+    <div class="form-group">
+        <label for="password-field">Password:</label>
+        <input class="form-control" id="password-field" type="password" name="password" th:value="${password}" />
     </div>
     <br/>
     <input type="submit" value="Invoices"/>
